@@ -1,0 +1,32 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    height: 85px;
+    background-color: $blue;
+    position: fixed;
+    top: 0;
+    bottom: 85px;
+	width: 100%;
+	z-index: 99999;
+    @include breakpoint-1 {
+		padding: 0 20px;
+	}
+	@include breakpoint-2 {
+		padding: 0 30px;
+	}
+	@include breakpoint-3 {
+		padding: 0 50px;
+	}
+	@include breakpoint-4 {
+		padding: 0 55px;
+	}
+	@include breakpoint-5 {
+		padding: 0 70px;
+	}
+	@include breakpoint-7 {
+		padding: 0 90px;
+	}
+}

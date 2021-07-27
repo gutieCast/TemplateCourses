@@ -1,0 +1,71 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+.menu-button-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 10px;
+    #menu-button-toggle {
+        display: block;
+        height: 30px;
+        position: absolute;
+        top: -4px;
+        transform: translate(0, -50%);
+        transition: opacity 0.3s 0.3s;
+        width: inherit;
+        z-index: 9999999;
+        span {
+            display: flex;
+            align-items: flex-end;
+            width: 50%;
+            height: 2.5px;
+            position: absolute;
+            top: 50%;
+            left: 30%;
+            background-color: $white;
+            transform: translate(0, -50%);
+            transition: opacity 0.3s 0.3s;
+        }
+        &::before,
+        &::after {
+            content: '';
+            display: block;
+            width: 50%;
+            height: 2px;
+            left: 30%;
+            position: absolute;
+            background-color: $white;
+            transition: transform 0.3s, top 0.3s 0.3s, bottom 0.3s 0.3s;
+        }
+        &::before {
+            top: 7px;
+        }
+        &::after {
+            bottom: 7px;
+        }
+        .menu-button-actived & {
+            span {
+            opacity: 0;
+            transition: opacity 0.3s;
+            }
+            &::before,
+            &::after {
+            background-color: $white;
+            transition: top 0.3s, bottom 0.3s, transform 0.3s 0.3s;
+            }
+            &::before {
+                top: calc(50% - 1px);
+                transform: rotate(45deg);
+            }
+            &::after {
+                bottom: calc(50% - 1px);
+                transform: rotate(-45deg);
+            }
+        }
+        @include breakpoint-4 {
+            display: none;
+        }
+    }
+}

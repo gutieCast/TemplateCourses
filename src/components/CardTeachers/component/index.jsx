@@ -1,0 +1,1 @@
+export { InfoExpanded } from 'components/CardTeachers/component'

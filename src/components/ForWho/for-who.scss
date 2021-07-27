@@ -1,0 +1,56 @@
+@import "styles/variables.scss";
+@import "styles/mixins.scss";
+
+#for-who {
+    height: auto;
+    position: relative;
+    .bg-color {
+        background-color: $green;
+        left: 0;
+        position: absolute;
+        right: 0;
+        z-index: -1;
+        @include breakpoint-1 {
+            height: 7%;
+            top: 13%;
+        }
+        @include breakpoint-2 {
+            height: 15%;
+            top: 17%;
+        }
+    }
+}
+
+#methodology {
+    display: block;
+    width: 100%;
+    @include breakpoint-1 {
+        height: 350px;
+    }
+    @include breakpoint-2 {
+        height: 400px
+    }
+    @include breakpoint-3 {
+        height: 500px;
+    }
+    @include breakpoint-4 {
+        height: 530px;
+    }
+    // @include breakpoint-5 {
+
+    // }
+    #banner-meth {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        height: inherit;
+        max-width: 100%;
+        overflow: hidden;
+        .content-meth {
+            margin: auto;
+            width: 60%;
+            height: 60%;
+        }
+    }
+}

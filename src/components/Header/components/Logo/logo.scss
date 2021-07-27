@@ -1,0 +1,16 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+.logo-container {
+    height: 90%;
+    position: absolute;
+    top: 3px;
+    z-index: 9999999;
+    #logoCourse {
+        max-height: 100%;
+    }
+    .menu-button-actived & {
+        opacity: 1;
+        transition: all ease-in-out .5s;
+    }
+}

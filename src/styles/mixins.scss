@@ -1,0 +1,49 @@
+@mixin breakpoint-1 {
+    // small mobile
+    @media (min-width: 240px) {
+        @content;
+    }
+}
+
+@mixin breakpoint-2 {
+    // normal mobile
+    @media (min-width: 481px) {
+        @content;
+    }
+}
+
+
+@mixin breakpoint-3 {
+    // horizontal mobile - tablet
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin breakpoint-4 {
+    // horizontal tablet - minilaptop
+    @media (min-width: 990px) {
+        @content;
+    }
+}
+
+@mixin breakpoint-5 {
+    // minilaptop
+    @media (min-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin breakpoint-6 {
+    // laptop
+    @media (min-width: 1366px) {
+        @content;
+    }
+}
+
+@mixin breakpoint-7 {
+    // Large-screen
+    @media (min-width: 1824px) {
+        @content;
+    }
+}

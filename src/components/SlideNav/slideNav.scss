@@ -1,0 +1,16 @@
+@import "styles/variables.scss";
+@import "styles/mixins.scss";
+
+.slider {
+    padding: 0 50px 50px 50px;
+    width: min-content;
+    .slider-container {
+        .cards-container {
+            width: 70vw;
+            @include breakpoint-4 {
+                width: 90vw;
+            }
+        }
+
+    }
+}

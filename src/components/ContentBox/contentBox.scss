@@ -1,0 +1,114 @@
+@import "styles/variables.scss";
+@import "styles/mixins.scss";
+
+.content-box {
+    align-items: center;
+    display: flex;
+    height: auto;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+    width: 100%;
+    .title-section-center {
+        color: $blue;
+        display: block;
+        text-transform: uppercase;
+        font-size: $title-s;
+        font-weight: 700;
+        letter-spacing: 4px;
+        line-height: 1.2;
+        padding: 35px 0;
+        @include breakpoint-4 {
+            font-size: $title;
+        }
+        .green-line {
+            background-color: $green;
+            display: block;
+            height: 6px;
+            margin: 10px auto;
+            width: 70px;
+        }
+    }
+    .img-container {
+        display: flex; 
+        width: 100%;
+        padding: 0 15px;
+        @include breakpoint-4 {
+            display: inline-block; 
+            padding: 30px 70px;
+            width: 50%;
+            margin: 0;
+        }
+        .img-section {
+            // padding: 30px;
+            margin: auto;
+            max-width: 100%;
+        }
+    }
+    .content-container {
+        display: block; 
+        height: auto;
+        margin: auto;
+        padding: 50px 15px;
+        width: 100%;
+        @include breakpoint-4 {
+            display: inline-block;
+            width: 50%;
+            margin: 0;
+        }
+        .title-section {
+            color: $blue;
+            font-size: $title-s;
+            font-weight: 700;
+            letter-spacing: 4px;
+            line-height: 1.2;
+            padding-bottom: 5px;
+            text-transform: uppercase;
+            @include breakpoint-4 {
+                font-size: $title;
+            }
+            .green-line {
+                background-color: $green;
+                display: block;
+                height: 6px;
+                margin-top: 10px;
+                width: 70px;
+            }
+        }
+        .body-section {
+            font-family: $main-font;
+            font-size: ($r)-2;
+            color: $blue;
+            padding: 15px;
+        }
+    }
+    &.center {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    &.normal {
+        flex-direction: column;
+        @include breakpoint-4 {
+            flex-flow: row nowrap;
+        }
+    }
+    &.rev {
+        flex-direction: column-reverse;
+        @include breakpoint-4 {
+            flex-flow: row-reverse nowrap;
+        }    
+    }
+    &.ligth {
+        background-color: transparent;
+        .title-section, .body-section {
+            color: $blue;
+        }
+    }
+    &.dark {
+        background-color: $blue;
+        .title-section, .body-section {
+            color: $white;
+        }
+    }
+}

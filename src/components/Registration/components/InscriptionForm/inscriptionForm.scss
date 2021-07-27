@@ -1,0 +1,51 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+#registrer-form {
+    background-color: $blue;
+    padding: 30px;
+    color: white;
+    font-family: $title-font;
+    .title-form {
+        color: $green;
+    }
+    input, .input-phone {
+        background-color: $blue;
+        color: $white;
+        font-family: $title-font;
+    }
+
+    .input-phone {
+        #phone {
+            border-color: transparent;
+        }
+        &:focus #phone {
+            border-color: transparent;
+        }
+    }
+
+    #payment-modality {
+        background-color: $blue;
+        font-family: $title-font;
+        font-size: 15px;
+        color: $white;
+        &:first-child {
+            color: gray;
+        }
+    }
+    span {
+        color: $orange;
+    }
+    button {
+        background-color: $green;
+        font-family: $title-font;
+        font-size: $button;
+        font-weight: bold;
+        text-transform: uppercase;
+        cursor: pointer;
+        &:disabled {
+            cursor: wait;
+            background-color: $blue;
+        }
+    }
+}

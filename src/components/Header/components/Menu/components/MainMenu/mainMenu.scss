@@ -1,0 +1,108 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+#main-menu {
+    display: none;
+    .menu-button-actived & {
+        background-color: $blue;
+        position: fixed;
+        z-index: 999999;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        top: 0; right: 0; bottom: 0; left: 0;
+        padding: 100px 50px;
+        height: 100vh;
+        overflow-y: scroll;
+    }
+    @include breakpoint-4 {
+        margin: 0;
+        align-items: center;
+        background-color: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .menu-item {
+        display: flex;
+        align-items: center;
+        @include breakpoint-1 {
+            opacity: 0;
+            margin: 30px 10px;
+            transform: translateX(20px);
+            transition: all 0.3s;
+            $time-offset-close: 0;
+            @for $i from 5 through 1 {
+                &:nth-childn(n + #{$i}) {
+                    $time-offset-close: $time-offset-close + 0.5;
+                    transition-delay: #{$time-offset-close}s;
+                    span {
+                        transition-delay: #{$time-offset-close}s;
+                    }
+                }
+            }
+            .menu-button-actived & {
+                opacity: 1;
+                // transition: all 0.3s;
+                transform: translateX(0);
+                backface-visibility: hidden;
+                $time-offset-open: 1;
+                @for $i from 1 through 5 {
+                    &:nth-child(n + #{$i}) {
+                        $time-offset-open: $time-offset-open + 0.5;
+                        transition-delay: #{$time-offset-open}s;
+                        span {
+                            transition-delay: #{$time-offset-open}s;
+                        }
+                    }
+                }
+            }
+        }
+        @include breakpoint-4 {
+            opacity: 1;
+            margin: 0;
+        }
+        .menu-link  {
+            color: $white;
+            display: inline-block;
+            font-family: $title-font;
+            font-size: $r;
+            font-weight: 500;
+            line-height: 40px;
+            text-transform: uppercase;
+            text-decoration: none;
+            .menu-button-actived & {
+                display: block;
+                opacity: 1;
+                text-align: start;
+                transition: opacity 0s ease 2s;
+            }	
+            @include breakpoint-4 {
+                font-size: $xs;
+                padding: 0 15px;
+                &:hover {
+                    color: $green;
+                    text-decoration-line: none;
+                    transition: color ease-out .7s;
+                }
+                &:active {
+                    font-style: italic;
+                }
+            }
+            @include breakpoint-4 {
+                cursor: pointer;
+                // font-size: $font-size-s;
+                margin: 0 5px;
+            }
+            @include breakpoint-5 {
+                // font-size: $font-size-normal;
+                margin: 0 5px;
+            }
+            @include breakpoint-7 {
+                // font-size: $font-size-l;
+                margin: 0 5px;
+                padding: 0 20px;
+            }
+        }
+    }
+}

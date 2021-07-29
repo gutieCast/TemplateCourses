@@ -109,6 +109,9 @@
         background-color: $blue;
         .title-section, .body-section {
             color: $white;
+            .dark & {
+                color: $white;
+            }
         }
     }
 }

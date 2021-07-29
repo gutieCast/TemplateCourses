@@ -1,26 +1,44 @@
 import React, { useState } from 'react'
 // import { InfoExpanded } from 'components/CardTeachers/component';
+import 'components/CardTeachers/cardTeacher.scss'
 
 
 const CardTeacher = ({ id, src, nameTeacher, description }) => {
 
     const [infoIsExpanded, setInfoIsExpanded] = useState(false);
 
+    const handleClick = (e) => {
+        e.preventDefault()
+        console.log('info-spread');
+        if (infoIsExpanded) {
+            setInfoIsExpanded(false)
+        } else {
+            setInfoIsExpanded(true)
+        }
+    }
+
     return (
         <>
             <li
-                // key={`teacher-${id}`}
-                className="uk-width-1-12 card-container">
-                <div
+                key={`teacher-${id}`}
+                className="uk-width-1-12 card-item">
+                <button
                     id={`teacher-${id}-card`}
-                    className="uk-card uk-card-default teacher-card"
-                    onClick={() => setInfoIsExpanded(true)}
+                    type={'button'}
+                    className="card-container"
+                    onClick={(e) => handleClick(e)}
                 >
-                    <div className="uk-card-media-top">
-                        <img src={src} alt={`${nameTeacher} card`} />
+                    <div className="uk-card uk-card-default teacher-card">
+                        <div className="uk-card-media-top card-img">
+                            <img src={src} alt={`${nameTeacher} card`} />
+                        </div>
+                        <div className={`info-module-spread-out ${infoIsExpanded ? 'shown' : 'hide'}`}>
+                            {/* <h3 className="title-spread-out">{nameTeacher}</h3> */}
+                            <p className="text-spread-out">{description}</p>
+                        </div>
                     </div>
                     {/* <InfoExpanded state={infoIsExpanded} handleClick={() => setInfoIsExpanded(false)} nameTeacher={nameTeacher} description={description} /> */}
-                </div>
+                </button>
             </li>
         </>
     )

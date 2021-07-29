@@ -7,10 +7,14 @@
     .slider-container {
         .cards-container {
             width: 70vw;
+            height: 570px;
             @include breakpoint-4 {
                 width: 90vw;
+                height: 730px;
             }
         }
-
+    }
+    .button-slider {
+        color: gray;
     }
 }

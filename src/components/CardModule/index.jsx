@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import ReactModal from 'react-modal'
-import 'components/CardModule/card.scss'
+import { ContentBox } from 'components/ContentBox'
+import 'components/CardModule/cardModule.scss'
 
 ReactModal.setAppElement('#root')
 
@@ -36,27 +37,32 @@ const CardModule = ({ id, idx, src, titleImg, item, title, teacher, date, conten
                 onRequestClose={() => setModalIsOpen(false)}
                 preventScroll={true}
             >
-                <div className="modal-body">
-                    <button uk-icon="close" className="uk-modal-close modal-button-close" onClick={() => setModalIsOpen(false)}></button>
-                    <h3 className="modal-title">{`Modulo ${item}: ${title}`}</h3>
-                    <p className="modal-text">{`Fecha: ${date}`}</p>
-                    <div className="content-modal">
-                        <h4 className="modal-subtitle">Lista de contenidos:</h4>
-                        <ul className="sillabus">
-                            {
-                                content.map((item, i) => {
-                                    return (
-                                        <li key={`topic-${i}`} className="topic">
-                                            <p className="modal-text">
-                                                {item}
-                                            </p>
-                                        </li>
-                                    )
-                                })
-                            }
-                        </ul>
+                <ContentBox
+                    theme={'dark'}
+                    title={`Modulo ${item}`}
+                    hideDiv={true}
+                >
+                    <div className="modal-body">
+                        <button uk-icon="close" className="uk-modal-close modal-button-close" onClick={() => setModalIsOpen(false)}></button>
+                        <p className="modal-text">{`Fecha: ${date}`}</p>
+                        <div className="content-modal">
+                            <h4 className="modal-subtitle">Temas:</h4>
+                            <ul className="sillabus">
+                                {
+                                    content.map((item, i) => {
+                                        return (
+                                            <li key={`topic-${i}`} className="topic">
+                                                <p className="modal-text">
+                                                    {item}
+                                                </p>
+                                            </li>
+                                        )
+                                    })
+                                }
+                            </ul>
+                        </div>
                     </div>
-                </div>
+                </ContentBox>
             </ReactModal>
         </>
     )

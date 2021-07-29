@@ -1,4 +1,5 @@
 import heroImg from 'assets/images/banners-backgrounds/hero-img.jpg'
+
 import logoUnesco from 'assets/images/logos/logo-unesco.png'
 import logoUAGRM from 'assets/images/logos/logo-UAGRM.png'
 import logoUAGRM_VR from 'assets/images/logos/logo-UAGRM-vicerrectorado.png'
@@ -6,12 +7,16 @@ import logoAmaszonas from 'assets/images/logos/logo-amaszonas.png'
 import logoSedema from 'assets/images/logos/logo-SEDEMA.png'
 import logoAulanet from 'assets/images/logos/logo-aulanet.png'
 import logoIpax from 'assets/images/logos/logo-ipax.png'
+
 import aboutCourseImg from 'assets/images/banners-backgrounds/sobre-rescat.jpg'
 import solutionImg from 'assets/images/banners-backgrounds/bg-solucion.jpg'
+
 import forWhoImg from 'assets/images/banners-backgrounds/img-para-quien.png'
 import bgMethodologyImg from 'assets/images/banners-backgrounds/bg-metodologia-1.jpg'
-import contMethodologyImg from 'assets/images/banners-backgrounds/img-metodologia-1.png'
+import methodologyImg from 'assets/images/banners-backgrounds/img-metodologia-1.png'
+
 import profitIcon from 'assets/images/icon-beneficios.png'
+
 import mod1 from 'assets/images/modules/Modulo1.jpg'
 import mod2 from 'assets/images/modules/Modulo2.jpg'
 import mod3 from 'assets/images/modules/Modulo3.jpg'
@@ -38,6 +43,9 @@ import teacher10 from 'assets/images/teachers/Rocio-Montenegro.jpg'
 import teacher11 from 'assets/images/teachers/Selua-Gil.jpg'
 import teacher12 from 'assets/images/teachers/Solia-Centeno.jpg'
 
+import qrWAimg from 'assets/images/qr-ws-1.png'
+import qrPayment from 'assets/images/qr-payment.jpg'
+
 
 export const imgHero = heroImg
 
@@ -54,9 +62,11 @@ export const logos = collabs
 
 export const imgAboutCourse = aboutCourseImg
 export const imgSolution = solutionImg
-export const bgMethodology = bgMethodologyImg
-export const contMethodology = contMethodologyImg
+
 export const imgForWho = forWhoImg
+export const bgMethodology = bgMethodologyImg
+export const methodology = methodologyImg
+
 export const iconProfit = profitIcon
 
 const modulesImg = [
@@ -92,3 +102,7 @@ const teachersPhotos = [
 ]
 
 export const imgTeachers = teachersPhotos
+
+export const qrWA = qrWAimg
+
+export const qrPay = qrPayment

@@ -19,13 +19,12 @@ button {
     -moz-appearance: none;
 }
 button:disabled {
-    color: gray;
+    color: gray
 }
 button:hover,
 button:focus {
     background: none;
 }
-
 
 .link-button {
     align-items: center;
@@ -35,7 +34,7 @@ button:focus {
     height: 55px;
     justify-content: center;
     min-width: 200px;
-    // overflow: hidden;
+    max-width: max-content;
     .button {
         border: none;
         color: $white;
@@ -45,25 +44,23 @@ button:focus {
         letter-spacing: 1.4;
         max-width: 100%;
         text-transform: uppercase;
-        &:hover {
-            text-decoration: none;
-        }
-    }
-    & .PDF-downloader {
-        position: absolute;
-        bottom: 140px;
-        right: 90px;
-        @include breakpoint-3 {
-                bottom: 170px;
-        }
-    }
-    .button:disabled   {
-        cursor: wait;
         text-decoration: none;
-        color: gray;
-        .link-button & {
-            background-color: $gray;
-            text-decoration: none;
+        & .PDF-downloader {
+            position: absolute;
+            bottom: 140px;
+            right: 90px;
+            @include breakpoint-3 {
+                bottom: 170px;
+            }
+        }
+    }
+    &:hover {
+        background-color: $blue;
+        color: $green;
+        transition: all ease-in 0.5s;
+        text-decoration: none;
+        & .button {
+            color: $green;
         }
     }
 }

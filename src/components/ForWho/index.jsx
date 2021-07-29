@@ -1,7 +1,7 @@
 import React from 'react'
 import { ContentBox } from 'components/ContentBox'
 import { infoCourse } from 'helpers/data'
-import { imgForWho, bgMethodology, contMethodology } from 'helpers/images'
+import { imgForWho, bgMethodology, methodology } from 'helpers/images'
 import 'components/ForWho/for-who.scss'
 
 const ForWho = () => {
@@ -29,10 +29,9 @@ const ForWho = () => {
                     </ContentBox>
             }
             <section id="methodology">
-                <div id="banner-meth" style={{ backgroundImage: `url(${bgMethodology})` }}>
-                    <img className="content-meth" scr={contMethodology} alt="¡Metodología 100% online!" />
-                </div>
-
+                <div id="banner-meth" style={{ backgroundImage: `url(${bgMethodology})` }}></div>
+                <div className="img-methodology" style={{ backgroundImage: `url(${methodology})` }}></div>
+                {/* <img className="img-methodology" scr={methodology} alt="¡Metodología 100% online!" /> */}
             </section>
         </section>
     )

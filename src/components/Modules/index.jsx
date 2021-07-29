@@ -2,7 +2,7 @@ import React from 'react'
 import { ContentBox } from 'components/ContentBox'
 import { SlideNav } from 'components/SlideNav'
 
-const Modules = ({ modules }) => {
+const Modules = () => {
     return (
         <section id="modules">
             <ContentBox

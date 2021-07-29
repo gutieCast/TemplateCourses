@@ -1,6 +1,5 @@
 export { Button } from 'components/Button'
 export { Registration } from 'components/Registration'
-export { ModalApp } from 'components/Modal'
 export { ContentBox } from 'components/ContentBox'
 export { AboutCourse } from 'components/AboutCourse'
 export { ForWho } from 'components/ForWho'

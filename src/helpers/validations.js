@@ -81,4 +81,22 @@ const validatePaymentModality = (modality) => {
     }
 }
 
-export const validations = { errors, validateName, validateLastname, validateEmail, validatePhone, validateProfession, validateOrganization, validatePaymentModality };
+const validateSubject = (subject) => {
+    console.log('subject ' + subject);
+    if (!subject || subject === '' || subject === "undefined") {
+        return errors.subject = "Por favor, ingrese el asunto"
+    } else {
+        return errors.subject = ''
+    }
+};
+
+const validateMessage = (message) => {
+    console.log('message ' + message);
+    if (!message || message === '' || message === "undefined") {
+        return errors.message = "Por favor, ingrese su mensaje"
+    } else {
+        return errors.message = ''
+    }
+};
+
+export const validations = { errors, validateName, validateLastname, validateEmail, validatePhone, validateProfession, validateOrganization, validatePaymentModality, validateSubject, validateMessage };

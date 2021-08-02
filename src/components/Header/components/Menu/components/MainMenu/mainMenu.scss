@@ -9,11 +9,11 @@
         z-index: 999999;
         display: flex;
         flex-direction: column;
-        overflow: hidden;
+        overflow-y: visible;
         top: 0; right: 0; bottom: 0; left: 0;
-        padding: 100px 50px;
+        padding: 80px 50px 0 50px;
         height: 100vh;
-        overflow-y: scroll;
+        // overflow-y: scroll;
     }
     @include breakpoint-4 {
         margin: 0;
@@ -26,9 +26,21 @@
     .menu-item {
         display: flex;
         align-items: center;
+        &:last-child {
+            background-color: $green;
+            color: $white;
+            border-radius: 5px;
+            max-width: 135px;
+            justify-content: center;
+            &:hover {
+                border-color: $green;
+                background-color: $blue;
+                color: $green;
+            }
+        }
         @include breakpoint-1 {
             opacity: 0;
-            margin: 30px 10px;
+            margin: 20px 10px;
             transform: translateX(20px);
             transition: all 0.3s;
             $time-offset-close: 0;

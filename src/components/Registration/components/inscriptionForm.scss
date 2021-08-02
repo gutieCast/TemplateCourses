@@ -3,6 +3,7 @@
 
 .inscription {
     position: relative;
+    width: 100%;
     .label-section {
         position: absolute;
         top: 20px;
@@ -13,25 +14,26 @@
             color: $blue;
         }
     }
-    .title-section-center{
-        color: $white;
-    }
     .form-registrer {
-        max-width: 100%;
+        width: 80%;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        .fieldset {
+            width: 70%;
+            input, .input-phone {
+                background-color: $blue;
+                color: $white;
+                font-family: $title-font;
+                max-width: 100%;
+            }
+        }
     }
     // background-color: $blue;
     // padding: 30px;
     // color: white;
     // font-family: $title-font;
-    input, .input-phone {
-        background-color: $blue;
-        color: $white;
-        font-family: $title-font;
-    }
     
     .input-phone {
         #phone {
@@ -46,9 +48,12 @@
         background-color: $blue;
         font-family: $title-font;
         font-size: 15px;
-        color: $white;
-        &:first-child {
-            color: gray;
+        height: 40px;
+        color: $gray;
+        width: 100%;
+        &:hover {
+            background-color: $blue;
+            color:$white;
         }
     }
 
@@ -83,10 +88,8 @@
 
 ////////////////////////////////////////////////////////////////////
     .text-container {
-        width: 100%;
-        @include breakpoint-3 {
-            width: 80%;
-        }
+        width: 80%;
+        text-align: justify;
     }
     .payment-container {
         display: flex;
@@ -126,6 +129,9 @@
                 padding-left: 30px;
                 width: 50%;
             }
+            @include breakpoint-4 {
+                padding: 50px;
+            }
             div {
                 margin: 15px 0
             }
@@ -159,6 +165,10 @@
             font-weight: bolder;
             text-transform: uppercase;
             color: $gray;
+            text-align: center;
+            @include breakpoint-4 {
+                text-align: left;
+            }
         }
         // .upload-btn {
         //     margin: auto;    

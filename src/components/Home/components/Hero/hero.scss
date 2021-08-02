@@ -40,10 +40,10 @@
                 text-transform: uppercase;
                 text-shadow: rgba(3, 3, 3, 0.719) 0 0 5px;
                 @include breakpoint-3 {
-                    font-size: $title-s;
+                    font-size: $main;
                 }
                 @include breakpoint-4 {
-                    font-size: ($title-s)-1;
+                    font-size: ($main)-1;
                 }
             }
         }

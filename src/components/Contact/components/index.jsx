@@ -1,0 +1,1 @@
+export { ContactForm } from 'components/Contact/components/ContactForm'

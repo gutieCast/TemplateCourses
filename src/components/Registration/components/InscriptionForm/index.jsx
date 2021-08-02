@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Redirect } from 'react-router-dom'
-import { validations } from 'components/Registration/components/InscriptionForm/validations'
+import { validations } from 'helpers/validations'
 import PhoneInput from 'react-phone-number-input'
 import 'react-phone-number-input/style.css'
 import 'components/Registration/components/inscriptionForm.scss'
@@ -79,7 +79,7 @@ const InscriptionForm = ({ defaultOption, selectOption1, selectOption2, selectOp
     return (
         <>
             {goPay && (<Redirect to="/modo-de-pago" />)}
-            <section id="registrer-form inscription">
+            <section id="registrer-form" className="inscription">
                 <ContentBox
                     theme={'dark'}
                     title={'registro'}
@@ -90,8 +90,7 @@ const InscriptionForm = ({ defaultOption, selectOption1, selectOption2, selectOp
                         Paso 1 de 2
                     </label>
                     <form className="form-registrer" onSubmit={handleSubmit}>
-                        <fieldset className="uk-fieldset" >
-
+                        <fieldset className="uk-fieldset fieldset" >
                             <div className="uk-margin">
                                 <input className="uk-input" name="name" id="name" type="text" placeholder="*Nombre" value={name} onChange={(e) => setName(e.target.value)} onBlur={(e) => validateName(e.target.value)} />
                                 {errors.name !== '' ? <span>{errors.name}</span> : ''}

@@ -9,8 +9,36 @@
     flex-direction: column;
     padding: 30px;
     width: 100%;
+    &.center {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    &.normal {
+        flex-direction: column;
+        @include breakpoint-4 {
+            flex-flow: row nowrap;
+        }
+    }
+    &.rev {
+        flex-direction: column-reverse;
+        @include breakpoint-4 {
+            flex-flow: row-reverse nowrap;
+        }    
+    }
+    &.light {
+        background-color: transparent;
+        .title-section, .title-section-center, .body-section {
+            color: $blue;
+        }
+    }
+    &.dark {
+        background-color: $blue;
+        .title-section, .title-section-center, .body-section {
+            color: $white;
+        }
+    }
     .title-section-center {
-        color: $blue;
         display: block;
         text-transform: uppercase;
         font-size: $title-s;
@@ -82,36 +110,24 @@
             padding: 15px;
         }
     }
-    &.center {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    &.normal {
-        flex-direction: column;
-        @include breakpoint-4 {
-            flex-flow: row nowrap;
+}
+.content-box{
+    &.dark {
+        .title-section{
+            color: $white;
+        }
+        .body-section {
+            color: $white;
         }
     }
-    &.rev {
-        flex-direction: column-reverse;
-        @include breakpoint-4 {
-            flex-flow: row-reverse nowrap;
-        }    
-    }
-    &.ligth {
-        background-color: transparent;
-        .title-section, .body-section {
+}
+.content-box{
+    &.light {
+        .title-section{
             color: $blue;
         }
-    }
-    &.dark {
-        background-color: $blue;
-        .title-section, .body-section {
-            color: $white;
-            .dark & {
-                color: $white;
-            }
+        .body-section {
+            color: $blue;
         }
     }
 }

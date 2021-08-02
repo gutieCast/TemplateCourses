@@ -6,7 +6,8 @@ const menu = [
     { name: '¿para quién?', link: '/para-quien', component: ForWho },
     { name: 'módulos', link: '/modulos', component: Modules },
     { name: 'docentes', link: '/docentes' },
-    { name: 'inversión', link: '/inversion' }
+    { name: 'inversión', link: '/inversion' },
+    { name: 'contacto', link: '/contacto' }
 ]
 
 export const options = menu

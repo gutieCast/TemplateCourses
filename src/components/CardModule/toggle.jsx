@@ -30,7 +30,7 @@ class Cards extends React.Component {
                                         <img src={src} alt={titleImg} />
                                     </div>
                                     <div uk-slider-parallax="x: 100,-100" className="uk-card-body card-info">
-                                        <div class="uk-card-badge uk-label number-module">{`Módulo ${item}`}</div>
+                                        <div className="uk-card-badge uk-label number-module">{`Módulo ${item}`}</div>
                                         <h4 className="uk-card-title title-module">{title}</h4>
                                         <p className="teacher-module">{`Docente: ${teacher}`}</p>
                                         <p className="Date-module">{`Fecha de inicio: ${date}`}</p>

@@ -8,6 +8,7 @@ import { Profits } from 'components/Profits'
 import { Modules } from 'components/Modules'
 import { Teachers } from 'components/Teachers'
 import { Contact } from 'components/Contact'
+import { InvestmentInfo } from 'components/InvestmentInfo'
 import { Home } from 'components/Home'
 import 'components/Main/main.scss'
 
@@ -23,6 +24,7 @@ const Main = () => {
                 <Route path="/modulos" component={Modules} />
                 <Route path="/docentes" component={Teachers} />
                 <Route path="/contacto" component={Contact} />
+                <Route path="/inversion" component={InvestmentInfo} />
                 <Route exact path="/" component={Home} />
             </Switch>
         </main>

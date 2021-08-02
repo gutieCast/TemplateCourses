@@ -9,7 +9,7 @@ const ContentBox = ({ theme, title, hideDiv, imgRoute, body, flowContent, childr
                 <div className={`content-box ${theme} ${flowContent}`}>
                     <h2 className="title-section-center">
                         {title}
-                        <div className="green-line"></div>
+                        <div className="title-line"></div>
                     </h2>
                     {children}
                 </div>
@@ -23,7 +23,7 @@ const ContentBox = ({ theme, title, hideDiv, imgRoute, body, flowContent, childr
                     <div className="content-container">
                         <h2 className="title-section">
                             {title}
-                            <div className="green-line"></div>
+                            <div className="title-line"></div>
                         </h2>
                         <p className='body-section'>
                             {body}

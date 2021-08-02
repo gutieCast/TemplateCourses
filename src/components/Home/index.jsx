@@ -5,6 +5,8 @@ import { ForWho } from 'components/ForWho'
 import { Profits } from 'components'
 import { Modules } from 'components/Modules'
 import { Teachers } from 'components/Teachers'
+import { Contact } from 'components/Contact'
+import { InvestmentInfo } from 'components/InvestmentInfo'
 
 const Home = () => {
     return (
@@ -15,6 +17,8 @@ const Home = () => {
             <Profits />
             <Modules />
             <Teachers />
+            <InvestmentInfo />
+            <Contact />
         </>
     )
 }

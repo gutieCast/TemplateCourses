@@ -254,94 +254,95 @@ const infoCourse = {
         {
             name: 'Alejandro Aramayo',
             description: [
-                ' 1Especialista Ambiental enfocado en la integración de nuevas tecnologías.',
+                ' 1Especialista Ambiental enfocado en la integración de nuevas tecnologías.', <br />,
                 'Experiencia de 4 años en el estudio de mercados financieros en economías descentralizadas, usos y campos de aplicación dentro de la tecnología blockchain, así como también en el Trading para la compra - venta de cripto activos y apertura al mercado bursátil tradicional.'
             ]
         },
         {
             name: 'Aurus Nefertum',
             description: [
-                '2 Especialista Ambiental enfocado en la integración de nuevas tecnologías.',
+                '2 Especialista Ambiental enfocado en la integración de nuevas tecnologías.', <br />,
                 'Experiencia de 4 años en el estudio de mercados financieros en economías descentralizadas, usos y campos de aplicación dentro de la tecnología blockchain, así como también en el Trading para la compra - venta de cripto activos y apertura al mercado bursátil tradicional.'
             ]
         },
         {
             name: 'Daniel Oropeza',
             description: [
-                '3 Especialista Ambiental enfocado en la integración de nuevas tecnologías.',
+                '3 Especialista Ambiental enfocado en la integración de nuevas tecnologías.', <br />,
                 'Experiencia de 4 años en el estudio de mercados financieros en economías descentralizadas, usos y campos de aplicación dentro de la tecnología blockchain, así como también en el Trading para la compra - venta de cripto activos y apertura al mercado bursátil tradicional.'
             ]
         },
         {
             name: 'Diego Urioste',
             description: [
-                '4 Especialista Ambiental enfocado en la integración de nuevas tecnologías.',
+                '4 Especialista Ambiental enfocado en la integración de nuevas tecnologías.', <br />,
                 'Experiencia de 4 años en el estudio de mercados financieros en economías descentralizadas, usos y campos de aplicación dentro de la tecnología blockchain, así como también en el Trading para la compra - venta de cripto activos y apertura al mercado bursátil tradicional.'
             ]
         },
         {
             name: 'Erick Saa',
             description: [
-                '5 Especialista Ambiental enfocado en la integración de nuevas tecnologías.',
+                '5 Especialista Ambiental enfocado en la integración de nuevas tecnologías.', <br />,
                 'Experiencia de 4 años en el estudio de mercados financieros en economías descentralizadas, usos y campos de aplicación dentro de la tecnología blockchain, así como también en el Trading para la compra - venta de cripto activos y apertura al mercado bursátil tradicional.'
             ]
         },
         {
             name: 'Jose Antonio Bedregal',
             description: [
-                '6 Especialista Ambiental enfocado en la integración de nuevas tecnologías.',
+                '6 Especialista Ambiental enfocado en la integración de nuevas tecnologías.', <br />,
                 'Experiencia de 4 años en el estudio de mercados financieros en economías descentralizadas, usos y campos de aplicación dentro de la tecnología blockchain, así como también en el Trading para la compra - venta de cripto activos y apertura al mercado bursátil tradicional.'
             ]
         },
         {
             name: 'Lidia Requena',
             description: [
-                '7 Especialista Ambiental enfocado en la integración de nuevas tecnologías.',
+                '7 Especialista Ambiental enfocado en la integración de nuevas tecnologías.', <br />,
                 'Experiencia de 4 años en el estudio de mercados financieros en economías descentralizadas, usos y campos de aplicación dentro de la tecnología blockchain, así como también en el Trading para la compra - venta de cripto activos y apertura al mercado bursátil tradicional.'
             ]
         },
         {
             name: 'Lilian Ruby',
             description: [
-                ' 8Especialista Ambiental enfocado en la integración de nuevas tecnologías.',
+                ' 8Especialista Ambiental enfocado en la integración de nuevas tecnologías.', <br />,
                 'Experiencia de 4 años en el estudio de mercados financieros en economías descentralizadas, usos y campos de aplicación dentro de la tecnología blockchain, así como también en el Trading para la compra - venta de cripto activos y apertura al mercado bursátil tradicional.'
             ]
         },
         {
             name: 'Patricia Chavez',
             description: [
-                '9 Especialista Ambiental enfocado en la integración de nuevas tecnologías.',
+                '9 Especialista Ambiental enfocado en la integración de nuevas tecnologías.', <br />,
                 'Experiencia de 4 años en el estudio de mercados financieros en economías descentralizadas, usos y campos de aplicación dentro de la tecnología blockchain, así como también en el Trading para la compra - venta de cripto activos y apertura al mercado bursátil tradicional.'
             ]
         },
         {
             name: 'Rocío Montenegro',
             description: [
-                '10 Especialista Ambiental enfocado en la integración de nuevas tecnologías.',
+                '10 Especialista Ambiental enfocado en la integración de nuevas tecnologías.', <br />,
                 'Experiencia de 4 años en el estudio de mercados financieros en economías descentralizadas, usos y campos de aplicación dentro de la tecnología blockchain, así como también en el Trading para la compra - venta de cripto activos y apertura al mercado bursátil tradicional.'
             ]
         },
         {
             name: 'Seulla Gil',
             description: [
-                '11 Especialista Ambiental enfocado en la integración de nuevas tecnologías.',
+                '11 Especialista Ambiental enfocado en la integración de nuevas tecnologías.', <br />,
                 'Experiencia de 4 años en el estudio de mercados financieros en economías descentralizadas, usos y campos de aplicación dentro de la tecnología blockchain, así como también en el Trading para la compra - venta de cripto activos y apertura al mercado bursátil tradicional.'
             ]
         },
         {
             name: 'Solia Centeno',
             description: [
-                'Especialista Ambiental enfocado en la integración de nuevas tecnologías.',
+                'Especialista Ambiental enfocado en la integración de nuevas tecnologías.', <br />,
                 '12 Experiencia de 4 años en el estudio de mercados financieros en economías descentralizadas, usos y campos de aplicación dentro de la tecnología blockchain, así como también en el Trading para la compra - venta de cripto activos y apertura al mercado bursátil tradicional.'
             ]
         },
     ],
-    inversión: [
+    inversion: [
         {
-            title: 'SISTEMA MODULAR',
+            title: ['sistema', <br />, 'modular'],
             price: '500',
-            modules: '1',
-            body: [
+            label: '/ 1 módulo',
+            recomended: false,
+            description: [
                 'Cuota fija modular (sin descuentos).',
                 'Inscripción inmediata.',
                 'Suscripción a 1 módulo de los 12 en curso.',
@@ -350,11 +351,12 @@ const infoCourse = {
             ]
         },
         {
-            name: 'DIPLOMADO COMPLETO',
+            title: ['diplomado', <br />, 'completo'],
             price: '3500',
-            modules: '12',
+            label: '/ 12 módulos',
+            recomended: true,
+            extraItem: 'Ahorras hasta 42%',
             description: [
-                'Ahorras hasta 42%',
                 'Inscripción inmediata.',
                 'Suscripción total (12 módulos).',
                 'Acceso a aula virtual y contenidos.',
@@ -362,11 +364,12 @@ const infoCourse = {
             ]
         },
         {
-            name: 'SISTEMA TETRA-MODULAR',
+            title: ['sistema', <br />, 'tetra-modular'],
             price: '1600',
-            modules: '4',
+            label: '/ 4 módulos',
+            recomended: false,
+            extraItem: 'Ahorras hasta 20%',
             description: [
-                'Ahorras hasta 20%',
                 'Inscripción inmediata.',
                 'Suscripción a 4 módulos de los 12 en curso.',
                 'Acceso a aula virtual y contenidos.',

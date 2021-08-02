@@ -1,0 +1,20 @@
+@import "styles/variables.scss";
+@import "styles/mixins.scss";
+
+.cards-container {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    margin: 20px 10px;
+    border-color: transparent;
+    // @include breakpoint-3 {
+    //     width: 237px;
+    // }
+    @include breakpoint-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    // @include breakpoint-6 {
+    //     height: 570px;
+    // }
+}

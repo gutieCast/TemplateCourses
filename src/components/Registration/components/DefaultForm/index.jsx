@@ -3,7 +3,7 @@ import { InscriptionForm } from 'components/Registration/components/InscriptionF
 
 const DefaultForm = () => {
     return (
-        <InscriptionForm defaultOption={true} />
+        <InscriptionForm optionSelected={""} />
     )
 }
 

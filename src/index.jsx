@@ -5,7 +5,7 @@ import App from 'App';
 import 'index.scss';
 
 render((
-  <HashRouter>
+  <HashRouter basename="/home">
     <App />
   </HashRouter>
 ), document.getElementById('root'));

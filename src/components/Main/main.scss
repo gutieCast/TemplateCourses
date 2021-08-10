@@ -2,8 +2,7 @@
 @import "styles/mixins.scss";
 
 .main {
-    // display: flex;
-    // flex-direction: column;
+    position: relative;
     height: auto;
     margin-top: 85px;
     width: 100%;

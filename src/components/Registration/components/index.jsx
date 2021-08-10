@@ -1,6 +1,3 @@
 export { InscriptionForm } from 'components/Registration/components/InscriptionForm'
 export { PaymentMeth } from 'components/Registration/components/PaymentMeth'
-export { DefaultForm } from 'components/Registration/components//DefaultForm'
-export { FirstOption } from 'components/Registration/components/FirstOption'
-export { SecondOption } from 'components/Registration/components/SecondOption'
-export { ThirdOption } from 'components/Registration/components/ThirdOption'
+export { DefaultForm } from 'components/Registration/components/DefaultForm'

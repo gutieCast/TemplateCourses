@@ -338,6 +338,7 @@ const infoCourse = {
     ],
     inversion: [
         {
+            item: 1,
             title: ['sistema', <br />, 'modular'],
             price: '500',
             label: '/ 1 módulo',
@@ -348,9 +349,12 @@ const infoCourse = {
                 'Suscripción a 1 módulo de los 12 en curso.',
                 'Acceso a aula virtual y contenidos.',
                 'Certificación al finalizar el diplomado.',
-            ]
+            ],
+            link: '/inscribirse/sistema-modular',
+            optionSelected: 'sistema-modular'
         },
         {
+            item: 3,
             title: ['diplomado', <br />, 'completo'],
             price: '3500',
             label: '/ 12 módulos',
@@ -361,9 +365,12 @@ const infoCourse = {
                 'Suscripción total (12 módulos).',
                 'Acceso a aula virtual y contenidos.',
                 'Incluye 1 diploma + 3 certificaciones.'
-            ]
+            ],
+            link: '/inscribirse/diplomado-completo',
+            optionSelected: 'diplomado-completo'
         },
         {
+            item: 2,
             title: ['sistema', <br />, 'tetra-modular'],
             price: '1600',
             label: '/ 4 módulos',
@@ -374,7 +381,9 @@ const infoCourse = {
                 'Suscripción a 4 módulos de los 12 en curso.',
                 'Acceso a aula virtual y contenidos.',
                 'Certificación al finalizar el diplomado.'
-            ]
+            ],
+            link: '/inscribirse/sistema-tetramodular',
+            optionSelected: 'sistema-tetramodular'
         }
     ]
 }

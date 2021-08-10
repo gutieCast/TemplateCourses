@@ -45,15 +45,27 @@
             height: inherit;
             max-width: 100%;
             z-index: -1;
-        }
-        .img-methodology {
-            position: absolute;
-            left: 50%;
-            margin: auto;
-            max-width: 60%;
-            height: 60%;
-            display: block;
-            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            .message-container {
+                max-width: 80%;
+                max-height: 80%;
+                .img-methodology {
+                    // position: absolute;
+                    // top: 15%;
+                    // left: 25%;
+                    margin: auto;
+                    height: 400px;
+                    width: 100%;
+                    display: block;
+                    z-index: 9999;
+                    @include breakpoint-1 {
+                        width: 60%;
+                    }
+                }
+            }
         }
     }
 }

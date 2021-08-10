@@ -2,10 +2,13 @@ import React from 'react'
 import { ContentBox } from 'components/ContentBox'
 import { infoCourse } from 'helpers/data'
 import { Card } from 'components/InvestmentInfo/components/Card'
+import { bannerInscription } from 'helpers/images'
+import {Button} from 'components/Button'
 import 'components/InvestmentInfo/investmentInfo.scss'
 
 const InvestmentInfo = () => {
     const { inversion } = infoCourse;
+
     return (
         <section id="investment-info">
             <ContentBox
@@ -14,23 +17,32 @@ const InvestmentInfo = () => {
                 hideDiv={true}
                 flowContent={"center"}
             >
-                <div className="cards-container">
+                <ul className="cards-grid">
                     {
-                        inversion.map((plan) => {
+                        inversion.map(({ recomended, title, price, label, extraItem, description, optionSelected }) => {
                             return (
-                                <Card
-                                    recomended={plan.recomended}
-                                    title={plan.title}
-                                    price={plan.price}
-                                    label={plan.label}
-                                    extraItem={plan.extraItem}
-                                    description={plan.description}
-                                />
+                                <li>
+                                    <Card
+                                        recomended={recomended}
+                                        title={title}
+                                        price={price}
+                                        label={label}
+                                        extraItem={extraItem}
+                                        description={description}
+                                        linkButton={optionSelected}
+                                    />
+                                </li>
+
                             )
                         })
                     }
 
+                </ul>
+                <div className="banner-container-inscription" style={{backgroundImage: `url(${bannerInscription})`}}>
+                    <h2 className="banner-text"> ¡inscríbete ahora! </h2>
+                    <Button classStyle={'btn-clear'} link="/inscribirse/" anim={'uk-animation-kenburns'} text={'¡Inscríbete!'} />
                 </div>
+
             </ContentBox>
         </section>
     )

@@ -10,7 +10,7 @@ const BurguerButton = ({ children }) => {
     return (
         <>
             <div className="menu-button-box">
-                <button type="button" id="menu-button-toggle" onClick={(e) => navMobileToggle(e)}>
+                <button className="burguer-btn" type="button" id="menu-button-toggle" onClick={(e) => navMobileToggle(e)}>
                     <span></span>
                 </button>
             </div>

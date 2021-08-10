@@ -9,7 +9,6 @@ const CardTeacher = ({ id, src, nameTeacher, description }) => {
 
     const handleClick = (e) => {
         e.preventDefault()
-        console.log('info-spread');
         if (infoIsExpanded) {
             setInfoIsExpanded(false)
         } else {
@@ -18,29 +17,17 @@ const CardTeacher = ({ id, src, nameTeacher, description }) => {
     }
 
     return (
-        <>
-            <li
-                key={`teacher-${id}`}
-                className="uk-width-1-12 card-item">
-                <button
-                    id={`teacher-${id}-card`}
-                    type={'button'}
-                    className="card-container"
-                    onClick={(e) => handleClick(e)}
-                >
-                    <div className="uk-card uk-card-default teacher-card">
-                        <div className="uk-card-media-top card-img">
-                            <img src={src} alt={`${nameTeacher} card`} />
-                        </div>
-                        <div className={`info-module-spread-out ${infoIsExpanded ? 'shown' : 'hide'}`}>
-                            {/* <h3 className="title-spread-out">{nameTeacher}</h3> */}
-                            <p className="text-spread-out">{description}</p>
-                        </div>
-                    </div>
-                    {/* <InfoExpanded state={infoIsExpanded} handleClick={() => setInfoIsExpanded(false)} nameTeacher={nameTeacher} description={description} /> */}
-                </button>
-            </li>
-        </>
+        <div className="card-container-teacher"  onClick={(e) => handleClick(e)}>
+            <div className="uk-card uk-card-default teacher-card">
+                <div className="uk-card-media-top card-img" >
+                    <img src={src} alt={`${nameTeacher} card`} />
+                </div>
+                <div className={`info-module-spread-out ${infoIsExpanded ? 'shown' : 'hide'}`}>
+                    {/* <h3 className="title-spread-out">{nameTeacher}</h3> */}
+                    <p className="text-spread-out">{description}</p>
+                </div>
+            </div>
+        </div>
     )
 }
 

@@ -2,13 +2,23 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import 'components/Button/button.scss'
 
-const Button = ({ text, func, type, link, classStyle, anim, disabled }) => {
+const Button = ({ text, onClick, type, link, classStyle, anim, disabled }) => {
     return (
-        <Link className={'uk-animation-toggle link-button'} type={type} disabled={disabled} onClick={func} to={link}>
-            <div className={`uk-button uk-button-default ${anim} button ${classStyle}`}>
-                {text}
-            </div>
-        </Link>
+        <>
+            {
+                link &&
+                <Link className={`uk-animation-toggle link-button ${classStyle}`} to={link}>
+                    {text}
+                </Link>
+
+            }
+            {
+                !link &&
+                <button className={`uk-button uk-button-default ${anim} btn ${classStyle}`} disabled={disabled} type={type} onClick={onClick}>
+                    {text}
+                </button>
+            }
+        </>
     )
 }
 

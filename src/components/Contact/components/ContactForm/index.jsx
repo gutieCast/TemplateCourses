@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import PhoneInput from 'react-phone-number-input';
 import { validations } from 'helpers/validations';
+import { Button } from 'components/Button';
+import 'components/Contact/components/ContactForm/contactForm.scss'
 
 const ContactForm = () => {
     /////////////////////////////////////////////////////VALIDATIONS
@@ -22,7 +24,7 @@ const ContactForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // const sendRegistrer = (name, email, phone, organization, subject, message) => {
+        // const sendMessage = (name, email, phone, organization, subject, message) => {
         //     // async + arg
         //     // await api({
         //     //     method: "post",
@@ -37,6 +39,7 @@ const ContactForm = () => {
         setOrganization('');
         setSubject('');
         setMessage('');
+        setIsDisabled(true);
         firstRender.current = true
     }
 
@@ -55,11 +58,16 @@ const ContactForm = () => {
         ) {
             return true
         } else {
+            validateName(name);
+            validateEmail(email);
+            validatePhone(phone);
+            validateSubject(subject);
+            validateMessage(message);
             for (let key in errors) {
                 if (errors[key] !== null && errors[key] !== "") {
                     return true
                 } else {
-                    errors = {}
+                    // errors = {}
                     return false
                 }
             }
@@ -67,8 +75,8 @@ const ContactForm = () => {
     };
 
     return (
-        <form>
-            <fieldset className="uk-fieldset">
+        <form className="contact-form">
+            <fieldset className="uk-fieldset fieldset">
                 <div className="uk-margin">
                     <input className="uk-input" name="name" id="name" type="text" placeholder="*Nombre Completo" value={name} onChange={(e) => setName(e.target.value)} onBlur={(e) => validateName(e.target.value)} />
                     {errors.name !== '' ? <span>{errors.name}</span> : ''}
@@ -100,7 +108,7 @@ const ContactForm = () => {
                     {errors.message !== '' ? <span>{errors.message}</span> : ''}
                 </div>
             </fieldset>
-            <button className="form-submit" disabled={isDisabled ? 'disabled' : ''} type='submit' onClick={(e) => handleSubmit(e)}>Enviar</button>
+            <Button text={'enviar'} disabled={isDisabled ? 'disabled' : ''} onClick={(e) => handleSubmit(e)} />
         </form >
     )
 }

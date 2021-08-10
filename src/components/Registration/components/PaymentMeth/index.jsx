@@ -1,7 +1,8 @@
 import React, { useState, useRef } from 'react'
 import { ContentBox } from 'components/ContentBox'
 import { qrPay } from 'helpers/images'
-import 'components/Registration/components/inscriptionForm.scss'
+import { Button } from 'components/Button'
+import 'components/Registration/components/InscriptionForm/inscriptionForm.scss'
 
 export const ProofInput = () => {
     const [file, setFile] = useState();
@@ -49,21 +50,19 @@ export const ProofInput = () => {
                             Al verificar la información, se le enviará un correo electrónico para coordinar los datos de facturación
                         </p>
                     </div>
-                    <button
-                        type='submit'
+                    <Button
+                        text={'enviar'}
+                        type={'submit'}
                         onClick={(e) => handleSubmit(e)}
-                    >
-                        enviar
-                    </button>
+                    />
                 </>
                 :
                 <>
-                    <button
-                        className='upload-btn'
+                    <Button
+                        text={'cargar archivo'}
+                        // className='upload-btn'
                         onClick={() => fileInput.current.click()}
-                    >
-                        cargar archivo
-                    </button>
+                    />
                 </>
         }
     </>
@@ -102,10 +101,7 @@ const PaymentMeth = () => {
                             Número de cuenta:
                         </label>
                         <p className="main-info">
-                            10000033396991 (Bs)
-                        </p>
-                        <p className="main-info">
-                            20000033396842 (USD)
+                            10000033397444 (Bs)
                         </p>
                     </div>
                     <div>

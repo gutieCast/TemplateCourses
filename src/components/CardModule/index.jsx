@@ -11,24 +11,23 @@ const CardModule = ({ id, idx, src, titleImg, item, title, teacher, date, conten
 
     return (
         <>
-            <li key={`module-${id}`} uk-slider-item={idx} className="uk-width-1-12 card-item">
-                <button className="card-container" onClick={() => setModalIsOpen(true)}>
-                    <div className="uk-card uk-card-default module-card">
-                        <div className="uk-card-media-top card-img">
-                            <img src={src} alt={titleImg} />
-                        </div>
-                        <div
-                            uk-slider-parallax="x: 50,-50"
-                            className="uk-card-body card-info"
-                        >
-                            <div className="uk-card-badge uk-label label-module">{`Módulo ${item}`}</div>
-                            <h4 className="uk-card-title title-module">{title}</h4>
-                            <p className="text-module">{`Docente: ${teacher}`}</p>
-                            <p className="text-module">{`Fecha de inicio: ${date}`}</p>
-                        </div>
+            <div className="card-container-module" onClick={() => setModalIsOpen(true)}>
+                <div className="uk-card uk-card-default module-card">
+                    <div className="uk-card-media-top card-img">
+                        <img src={src} alt={titleImg} />
                     </div>
-                </button>
-            </li>
+                    <div
+                        uk-slider-parallax="x: 50,-50"
+                        className="uk-card-body card-info"
+                    >
+                        <div className="uk-card-badge uk-label label-module">{`Módulo ${item}`}</div>
+                        <h4 className="uk-card-title title-module">{title}</h4>
+                        <p className="text-module">{`Docente: ${teacher}`}</p>
+                        <p className="text-module">{`Fecha de inicio: ${date}`}</p>
+                    </div>
+                </div>
+            </div>
+
             <ReactModal
                 id={`info-module${id}`}
                 className="modal"

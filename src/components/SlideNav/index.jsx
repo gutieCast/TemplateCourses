@@ -26,24 +26,26 @@ const SlideNav = ({ modules, teachers }) => {
     }
 
     return (
-        <div data-uk-slider="autoplay-interval: 2500; pause-on-hover: true" className="uk-position-relative uk-visible-toggle uk-light slider" tabIndex="-1" >
-            <div className="uk-slider-container slider-container">
-                <ul className="uk-slider-items uk-grid cards-container">
+        <div uk-slider="autoplay-interval: 2500; pause-on-hover: true center: true" className="uk-position-relative uk-visible-toggle uk-light slider" tabIndex="-1" >
+            <div className="uk-slider-container uk-grid slider-container">
+                <ul className="uk-slider-items cards-container">
                     {
                         modules &&
                         infoModules.map((module, i) => {
                             return (
-                                <CardModule
-                                    id={module.id}
-                                    idx={i}
-                                    src={module.src}
-                                    titleImg={module.titleImg}
-                                    item={module.item}
-                                    title={module.title}
-                                    teacher={module.teacher}
-                                    date={module.date}
-                                    content={module.content}
-                                />
+                                <li key={`module-${module.id}`} className="card-item-module">
+                                    <CardModule
+                                        id={module.id}
+                                        idx={i}
+                                        src={module.src}
+                                        titleImg={module.titleImg}
+                                        item={module.item}
+                                        title={module.title}
+                                        teacher={module.teacher}
+                                        date={module.date}
+                                        content={module.content}
+                                    />
+                                </li>
                             )
 
                         })
@@ -51,14 +53,17 @@ const SlideNav = ({ modules, teachers }) => {
 
                     {
                         teachers &&
-                        infoTeachers.map((teacher) => {
+                        infoTeachers.map((teacher, i) => {
                             return (
-                                <CardTeacher
-                                    id={teacher.id}
-                                    src={teacher.src}
-                                    nameTeacher={teacher.name}
-                                    description={teacher.description}
-                                />
+                                <li key={`teacher-${teacher.id}`} className="card-item-teacher">
+                                    <CardTeacher
+                                        id={teacher.id}
+                                        idx= {i}
+                                        src={teacher.src}
+                                        nameTeacher={teacher.name}
+                                        description={teacher.description}
+                                    />
+                                </li>
                             )
                         })
 

@@ -1,20 +1,47 @@
 @import "styles/variables.scss";
 @import "styles/mixins.scss";
 
-.cards-container {
-    display: flex;
-    flex-flow: column nowrap;
-    width: 100%;
-    margin: 20px 10px;
-    border-color: transparent;
-    // @include breakpoint-3 {
-    //     width: 237px;
-    // }
-    @include breakpoint-3 {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
+#investment-info {
+    padding-bottom: 90px;
+    .cards-grid {
+        border-color: transparent;
+        max-width: 1300px;
+        padding: 30px;
+        @include breakpoint-3 {
+            align-items: center;
+            justify-items: center;
+            box-sizing: content-box;
+            display: grid;
+            grid-gap: 7px;
+            // grid-template-rows: 100vw;
+            // grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @include breakpoint-4 {
+            grid-template-columns: repeat(3, 1fr);
+        }
     }
-    // @include breakpoint-6 {
-    //     height: 570px;
-    // }
+
+    .banner-container-inscription {
+        width: 100%;
+        background-repeat: no-repeat;
+        background-attachment: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 400px;
+        .banner-text {
+            color: $white;
+            font-family: $title-font;
+            text-transform: uppercase;
+            font-weight: bolder;
+            font-size: $title-l;
+            text-align: center;
+            @include breakpoint-4 {
+                font-size: 90px;
+                margin: 50px;
+            }
+        }
+    }
 }

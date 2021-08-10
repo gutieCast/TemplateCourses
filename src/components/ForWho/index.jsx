@@ -29,9 +29,12 @@ const ForWho = () => {
                     </ContentBox>
             }
             <section id="methodology">
-                <div id="banner-meth" style={{ backgroundImage: `url(${bgMethodology})` }}></div>
-                <div className="img-methodology" style={{ backgroundImage: `url(${methodology})` }}></div>
-                {/* <img className="img-methodology" scr={methodology} alt="¡Metodología 100% online!" /> */}
+                <div id="banner-meth" style={{ backgroundImage: `url(${bgMethodology})` }}>
+                    <div className="message-container">
+                        <div className="img-methodology" style={{ backgroundImage: `url(${methodology})` }}></div>
+                    </div>
+                    {/* <img className="img-methodology" scr={methodology} alt="¡Metodología 100% online!" /> */}
+                </div>
             </section>
         </section>
     )

@@ -6,7 +6,7 @@ const ContentBox = ({ theme, title, hideDiv, imgRoute, body, flowContent, childr
         <>
             {
                 hideDiv &&
-                <div className={`content-box ${theme} ${flowContent}`}>
+                <div className={`content-box no-margin ${theme} ${flowContent}`}>
                     <h2 className="title-section-center">
                         {title}
                         <div className="title-line"></div>

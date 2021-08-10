@@ -1,7 +1,7 @@
 import { AboutCourse, Profits, ForWho, Modules } from 'components'
 
 const menu = [
-    { name: 'acerca de', link: '/acerca-de', component: { AboutCourse } },
+    { name: 'acerca de', link: '/acerca-de', component: { AboutCourse }, hash: '#about-course' },
     { name: 'beneficios', link: '/beneficios', component: Profits },
     { name: '¿para quién?', link: '/para-quien', component: ForWho },
     { name: 'módulos', link: '/modulos', component: Modules },

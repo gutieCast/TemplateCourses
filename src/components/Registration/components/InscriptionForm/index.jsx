@@ -1,18 +1,20 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Redirect } from 'react-router-dom'
+import { Redirect, useParams } from 'react-router-dom'
+import { ContentBox } from 'components'
+import { Button } from 'components/Button'
 import { validations } from 'helpers/validations'
 import PhoneInput from 'react-phone-number-input'
 import 'react-phone-number-input/style.css'
-import 'components/Registration/components/inscriptionForm.scss'
-import { ContentBox } from 'components'
+import 'components/Registration/components/InscriptionForm/inscriptionForm.scss'
 
-const InscriptionForm = ({ defaultOption, selectOption1, selectOption2, selectOption3 }) => {
+const InscriptionForm = () => {
 
     /////////////////////////////////////////////////////VALIDATIONS
 
     const { errors, validateName, validateLastname, validateEmail, validatePhone, validateProfession, validateOrganization, validatePaymentModality } = validations
 
-    console.log(errors);
+
+    // const selectFromButton = setPaymentModality(sessionStorage.getItem('option'))
 
     /////////////////////////////////////////////////USE STATES & REGISTRER FUNCTIONS
 
@@ -24,9 +26,17 @@ const InscriptionForm = ({ defaultOption, selectOption1, selectOption2, selectOp
     const [phone, setPhone] = useState('')
     const [profession, setProfession] = useState('');
     const [organization, setOrganization] = useState('');
-    const [paymentModality, setPaymentModality] = useState('')
+    const [paymentModality, setPaymentModality] = useState(sessionStorage.getItem('option'))
     const [isDisabled, setIsDisabled] = useState(true)
     const [goPay, setGoPay] = useState(false);
+
+    // const { optionSelected } = useParams();
+
+    const options = [
+        { value: 'sistema-modular', title: '1 módulo (Bs. 500)' },
+        { value: 'sistema-tetramodular', title: '4 módulos (Bs. 1600)' },
+        { value: 'diplomado-completo', title: '12 módulos (Bs. 3500)' }
+    ];
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -122,16 +132,22 @@ const InscriptionForm = ({ defaultOption, selectOption1, selectOption2, selectOp
                             </div>
 
                             <div className="uk-margin">
-                                <select className="payment-modality" name="payment-modality" id="payment-modality" value={paymentModality} onChange={(e) => setPaymentModality(e.target.value)} onBlur={(e) => validatePaymentModality(e.target.value)}>
-                                    <option selected={defaultOption ? "selected" : ''} value={''}>--Escoge tu paquete--</option>
-                                    <option selected={selectOption1 ? "selected" : ''} value="1 módulo">1 Módulo (500 Bs.)</option>
-                                    <option selected={selectOption2 ? "selected" : ''} value="4 módulos">4 Módulos (1600 Bs.)</option>
-                                    <option selected={selectOption3 ? "selected" : ''} value="12 módulos">12 Módulos (3500 Bs.)</option>
+                                <select className="payment-modality" name="payment-modality" id="payment-modality" value={paymentModality} onChange={(e) => setPaymentModality(e.target.value)} onBlur={(e) => validatePaymentModality(e.target.value)}
+                                >
+                                    {
+                                        options.map(option => {
+                                            console.log('print key ' + paymentModality);
+                                            return (
+                                                <option selected={paymentModality === option.value ? 'true' : ''}>
+                                                    {option.title}
+                                                </option>
+                                            )
+                                        })}
                                 </select>
                                 {errors.paymentModality !== '' ? <span>{errors.paymentModality}</span> : ''}
                             </div>
                         </fieldset>
-                        <button className="form-submit" disabled={isDisabled ? 'disabled' : ''} type='submit' onClick={(e) => handleSubmit(e)}>Inscribirse</button>
+                        <Button text={'enviar'} disabled={isDisabled ? 'disabled' : ''} onClick={(e) => handleSubmit(e)} />
                     </form >
                 </ContentBox>
             </section>

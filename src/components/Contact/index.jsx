@@ -8,7 +8,7 @@ const Contact = () => {
     return (
         <section id="contact">
             <ContentBox
-                theme={'light'}
+                theme={'ligth'}
                 title={'Contacto'}
                 hideDiv={true}
             >
@@ -48,9 +48,11 @@ const Contact = () => {
                             </ul>
                         </div>
                     </div>
+
                     <div className="form-container">
                         <ContactForm />
                     </div>
+                    
                 </div>
             </ContentBox>
         </section >

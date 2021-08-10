@@ -1,3 +1,5 @@
+import logoWeb from 'assets/images/logo_web.png'
+
 import heroImg from 'assets/images/banners-backgrounds/hero-img.jpg'
 
 import logoUnesco from 'assets/images/logos/logo-unesco.png'
@@ -43,9 +45,14 @@ import teacher10 from 'assets/images/teachers/Rocio-Montenegro.jpg'
 import teacher11 from 'assets/images/teachers/Selua-Gil.jpg'
 import teacher12 from 'assets/images/teachers/Solia-Centeno.jpg'
 
+import bannerInscriptionImg from 'assets/images/banners-backgrounds/bg-inscribete-ahora.jpg'
+
 import qrWAimg from 'assets/images/qr-ws-1.png'
 import qrPayment from 'assets/images/qr-payment.jpg'
 
+import logoFooterWeb from 'assets/images/logo-footer.png'
+
+export const logo = logoWeb
 
 export const imgHero = heroImg
 
@@ -103,6 +110,10 @@ const teachersPhotos = [
 
 export const imgTeachers = teachersPhotos
 
+export const bannerInscription = bannerInscriptionImg
+
 export const qrWA = qrWAimg
 
 export const qrPay = qrPayment
+
+export const logoFooter = logoFooterWeb

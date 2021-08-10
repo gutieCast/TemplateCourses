@@ -1,7 +1,18 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 import 'components/InvestmentInfo/components/Card/card.scss'
+import { Button } from 'components'
 
-const Card = ({ recomended, title, price, label, extraItem, description }) => {
+const Card = ({ recomended, title, price, label, extraItem, description, linkButton }) => {
+
+    const history = useHistory()
+
+    const handleButton = (optionSelected) => {
+        console.log('selected: ' + optionSelected);
+        sessionStorage.setItem('option', optionSelected)
+        history.push("/inscribirse")
+    }
+
     return (
         <div className="card-container">
             {
@@ -43,7 +54,7 @@ const Card = ({ recomended, title, price, label, extraItem, description }) => {
                         })
                     }
                 </ul>
-
+                <Button text="¡inscribirse!" classStyle={`${recomended ? 'btn-clear' : '' } `} onClick={() => handleButton({ linkButton })} />
             </div>
         </div>
     )

@@ -1,7 +1,7 @@
 @import 'styles/mixins.scss';
 @import 'styles/variables.scss';
 
-#main-menu {
+.main-menu {
     display: none;
     .menu-button-actived & {
         background-color: $blue;
@@ -10,7 +10,7 @@
         display: flex;
         flex-direction: column;
         overflow-y: visible;
-        top: 0; right: 0; bottom: 0; left: 0;
+        top: 53px; right: 0; bottom: 0; left: 0;
         padding: 80px 50px 0 50px;
         height: 100vh;
         // overflow-y: scroll;
@@ -26,18 +26,6 @@
     .menu-item {
         display: flex;
         align-items: center;
-        &:last-child {
-            background-color: $green;
-            color: $white;
-            border-radius: 5px;
-            max-width: 135px;
-            justify-content: center;
-            &:hover {
-                border-color: $green;
-                background-color: $blue;
-                color: $green;
-            }
-        }
         @include breakpoint-1 {
             opacity: 0;
             margin: 20px 10px;
@@ -114,6 +102,25 @@
                 // font-size: $font-size-l;
                 margin: 0 5px;
                 padding: 0 20px;
+            }
+        }
+    }
+}
+
+.main-menu {
+    &.menu-header {
+        .menu-item {
+            &:last-child {
+                background-color: $green;
+                color: $white;
+                border-radius: 5px;
+                max-width: 135px;
+                justify-content: center;
+                &:hover {
+                    border-color: $green;
+                    background-color: $blue;
+                    color: $green;
+                }
             }
         }
     }

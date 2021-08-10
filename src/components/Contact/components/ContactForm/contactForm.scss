@@ -1,0 +1,46 @@
+@import "styles/variables.scss";
+@import "styles/mixins.scss";
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    .fieldset {
+        width: 450px;
+    }
+    #phone {
+        &:focus-visible {
+            border: none;
+            border-color: transparent;
+        }
+        &:hover {
+            border: none;
+            border-color: transparent;
+        }
+        border: none;
+        border-color: transparent;
+    }
+    span {
+        color: $orange;
+    }
+    button {
+        background-color: $green;
+        font-family: $title-font;
+        font-size: $button;
+        font-weight: bold;
+        text-transform: uppercase;
+        cursor: pointer;
+        margin: auto;
+        &:disabled {
+            cursor: wait;
+            background-color: $white;
+            border-color: $blue;
+        }
+        &:hover {
+            color: $green;
+            background-color: $blue;
+        }
+    }
+}

@@ -94,6 +94,8 @@ const validateMessage = (message) => {
     console.log('message ' + message);
     if (!message || message === '' || message === "undefined") {
         return errors.message = "Por favor, ingrese su mensaje"
+    } else if (message.length < 15 || message.length > 280) {
+        return errors.message = "Extensión no permitida para este campo. Mínimo 15 caracteres y máximo 280"
     } else {
         return errors.message = ''
     }

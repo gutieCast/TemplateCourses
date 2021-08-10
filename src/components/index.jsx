@@ -1,6 +1,7 @@
 export { Button } from 'components/Button'
 export { Registration } from 'components/Registration'
 export { ContentBox } from 'components/ContentBox'
+export { SponsorsLogos } from 'components/SponsorsLogos'
 export { AboutCourse } from 'components/AboutCourse'
 export { ForWho } from 'components/ForWho'
 export { Profits } from 'components/Profits'

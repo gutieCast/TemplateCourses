@@ -6,8 +6,10 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    width: 10px;
+    width: 40px;
     #menu-button-toggle {
+        background-color: transparent;
+        border: none;
         display: block;
         height: 30px;
         position: absolute;

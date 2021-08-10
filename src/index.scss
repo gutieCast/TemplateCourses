@@ -1,18 +1,19 @@
-body {
+html, body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  position: relative;
-  // display: block;
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  overflow-x: hidden;
   #root {
-    display: flex;
+    position: relative;
     box-sizing: content-box;
-    flex-flow: column wrap;
-    overflow-x: hidden;
     width: 100vw;
+    flex-grow: 1;
   }
 }
 

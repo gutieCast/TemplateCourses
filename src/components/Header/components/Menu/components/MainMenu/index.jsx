@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { options } from 'helpers/itemsMenu'
 import 'components/Header/components/Menu/components/MainMenu/mainMenu.scss'
 
-const MainMenu = ({ styleName }) => {
+const MainMenu = ({ styleAnimation, styleName }) => {
     const body = document.querySelector('body');
     const handleClick = (e) => {
         e.preventDefault();
@@ -12,14 +12,14 @@ const MainMenu = ({ styleName }) => {
         }
     }
     return (
-        <ul id="main-menu">
+        <ul className={`main-menu  ${styleName}`}>
             {
                 options.map(({ name, link }) =>
                     <li className="menu-item"
                         key={name}
                         onClick={(e) => handleClick(e)}
                     >
-                        <NavLink className={`${styleName} uk-animation-slide-top-small menu-link`} to={link}>
+                        <NavLink className={`${styleAnimation} uk-animation-slide-top-small menu-link`} to={link}>
                             {name}
                         </NavLink>
                     </li>

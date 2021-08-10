@@ -2,15 +2,21 @@
 @import "styles/mixins.scss";
 
 .slider {
-    padding: 0 50px 50px 50px;
     width: min-content;
     .slider-container {
+        margin: 0 90px;
         .cards-container {
-            width: 70vw;
-            height: 570px;
+            width: 85vw;
+            height: max-content;
             @include breakpoint-4 {
                 width: 90vw;
                 height: 730px;
+            }
+            .card-item-module {
+                display: flex;
+                flex-flow: row wrap;
+                height: 590px;
+                width: min-content;
             }
         }
     }

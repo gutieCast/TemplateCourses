@@ -1,13 +1,13 @@
-import { AboutCourse, Profits, ForWho, Modules } from 'components'
+import { AboutCourse, Profits, ForWho, Modules, Teachers, InvestmentInfo, Contact } from 'components'
 
-const menu = [
-    { name: 'acerca de', link: '/acerca-de', component: { AboutCourse }, hash: '#about-course' },
-    { name: 'beneficios', link: '/beneficios', component: Profits },
-    { name: '¿para quién?', link: '/para-quien', component: ForWho },
-    { name: 'módulos', link: '/modulos', component: Modules },
-    { name: 'docentes', link: '/docentes' },
-    { name: 'inversión', link: '/inversion' },
-    { name: 'contacto', link: '/contacto' }
+const options = [
+    { name: 'acerca de', link: '/#acerca-de', component: { AboutCourse }, hash: '#acerca-de' },
+    { name: 'beneficios', link: '/#beneficios', component: { Profits }, hash: '#beneficios' },
+    { name: '¿para quién?', link: '/#para-quien', component: { ForWho }, hash: '#para-quien' },
+    { name: 'módulos', link: '/#modulos', component: { Modules }, hash: '#modulos' },
+    { name: 'docentes', link: '/#docentes', component: { Teachers }, hash: '#docentes' },
+    { name: 'inversión', link: '/#inversion', component: { InvestmentInfo }, hash: '#inversion' },
+    { name: 'contacto', link: '/#contacto', component: { Contact }, hash: '#contacto' }
 ]
 
-export const options = menu
+export const menu = options

@@ -1,7 +1,10 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
+import smoothScrollPolyfill from 'smoothscroll-polyfill';
 import { DefaultForm } from 'components/Registration/components/DefaultForm'
 import { InscriptionForm } from './components'
+
+smoothScrollPolyfill.polyfill();
 
 const Registration = () => {
     return (

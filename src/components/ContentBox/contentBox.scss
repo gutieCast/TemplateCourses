@@ -7,7 +7,7 @@
     height: auto;
     justify-content: center;
     flex-direction: column;
-    padding: 50px;
+    padding: 50px 30px;
     width: 100%;
     height: 100%;
     .title-section-center {
@@ -22,7 +22,7 @@
             font-size: $title;
         }
         .title-line {
-            background-color: $green;
+            background-color: $supplementary-color;
             display: block;
             height: 6px;
             margin: 10px auto;
@@ -35,13 +35,13 @@
         @include breakpoint-4 {
             padding: 0 15px;
             display: inline-block; 
-            padding: 30px 70px;
+            // padding: 30px 70px;
             width: 50%;
             margin: 0;
         }
         .img-section {
             // padding: 30px;
-            margin: auto;
+            margin: auto 0;
             max-width: 100%;
         }
     }
@@ -57,18 +57,19 @@
             margin: 0;
         }
         .title-section {
-            color: $blue;
+            color: $main-color;
             font-size: $title-s;
             font-weight: 700;
             letter-spacing: 4px;
             line-height: 1.2;
             padding-bottom: 5px;
             text-transform: uppercase;
+            margin: 20px 0;
             @include breakpoint-4 {
                 font-size: $title;
             }
             .title-line {
-                background-color: $green;
+                background-color: $supplementary-color;
                 display: block;
                 height: 6px;
                 margin-top: 10px;
@@ -77,8 +78,8 @@
         }
         .body-section {
             font-family: $main-font;
-            font-size: ($r)-2;
-            color: $blue;
+            font-size: $s - 2;
+            color: $main-color;
             padding: 15px 0;
         }
     }
@@ -102,11 +103,11 @@
     // &.light {
     //     background-color: transparent;
     //     .title-section, .title-section-center, .body-section {
-    //         color: $blue;
+    //         color: $main-color;
     //     }
     // }
     // &.dark {
-    //     background-color: $blue;
+    //     background-color: $main-color;
     //     .title-section, .title-section-center, .body-section {
     //         color: $white;
     //     }
@@ -114,7 +115,7 @@
 }
 .content-box{
     &.dark {
-        background-color: $blue;
+        background-color: $main-color;
         .title-section, .title-section-center {
             color: $white;
         }
@@ -127,10 +128,10 @@
     &.ligth {
         background-color: transparent;
         .title-section, .title-section-center {
-            color: $blue;
+            color: $main-color;
         }
         .body-section{
-            color: $blue;
+            color: $main-color;
         }
     }
 }

@@ -6,7 +6,7 @@ const Logo = () => {
     return (
         <div className="uk-height-large uk-background-cover uk-overflow-hidden uk-light uk-flex logo-container">
             <a href="/">
-                <img id="logoCourse" src={logo} alt="RESCAT logo" />
+                <img id="logoCourse" src={logo.img} alt={logo.alt} />
             </a>
         </div>
     )

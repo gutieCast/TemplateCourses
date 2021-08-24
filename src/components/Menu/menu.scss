@@ -4,31 +4,30 @@
 .main-menu {
     display: none;
     .menu-button-actived & {
-        background-color: $blue;
-        position: fixed;
-        z-index: 999999;
+        background-color: $main-color;
         display: flex;
         flex-direction: column;
-        overflow-y: visible;
+        height: 90vh;
+        justify-content: space-evenly;
+        padding: 0 50px;
+        position: fixed;
         top: 53px; right: 0; bottom: 0; left: 0;
-        padding: 80px 50px 0 50px;
-        height: 100vh;
-        // overflow-y: scroll;
+        z-index: 9999999;
     }
     @include breakpoint-4 {
-        margin: 0;
         align-items: center;
         background-color: none;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        margin: 0;
     }
     .menu-item {
         display: flex;
         align-items: center;
         @include breakpoint-1 {
             opacity: 0;
-            margin: 20px 10px;
+            margin: 15px;
             transform: translateX(20px);
             transition: all 0.3s;
             $time-offset-close: 0;
@@ -66,9 +65,9 @@
             color: $white;
             display: inline-block;
             font-family: $title-font;
-            font-size: $r;
+            font-size: $s;
             font-weight: 500;
-            line-height: 40px;
+            line-height: 17px;
             text-transform: uppercase;
             text-decoration: none;
             .menu-button-actived & {
@@ -81,7 +80,7 @@
                 font-size: $xs;
                 padding: 0 15px;
                 &:hover {
-                    color: $green;
+                    color: $supplementary-color;
                     text-decoration-line: none;
                     transition: color ease-out .7s;
                 }
@@ -111,15 +110,18 @@
     &.menu-header {
         .menu-item {
             &:last-child {
-                background-color: $green;
+                background-color: $supplementary-color;
                 color: $white;
                 border-radius: 5px;
                 max-width: 135px;
                 justify-content: center;
+                .menu-link {
+                    line-height: 40px;
+                }
                 &:hover {
-                    border-color: $green;
-                    background-color: $blue;
-                    color: $green;
+                    border-color: $supplementary-color;
+                    background-color: $main-color;
+                    color: $supplementary-color;
                 }
             }
         }

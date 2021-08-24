@@ -7,8 +7,9 @@
     align-items: center;
     justify-content: center;
     margin: auto;
+    width: 60%;
     .fieldset {
-        width: 450px;
+        width: 100%;
     }
     #phone {
         &:focus-visible {
@@ -23,24 +24,6 @@
         border-color: transparent;
     }
     span {
-        color: $orange;
-    }
-    button {
-        background-color: $green;
-        font-family: $title-font;
-        font-size: $button;
-        font-weight: bold;
-        text-transform: uppercase;
-        cursor: pointer;
-        margin: auto;
-        &:disabled {
-            cursor: wait;
-            background-color: $white;
-            border-color: $blue;
-        }
-        &:hover {
-            color: $green;
-            background-color: $blue;
-        }
+        color: $complementary-color;
     }
 }

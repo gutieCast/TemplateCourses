@@ -108,7 +108,7 @@ const ContactForm = () => {
                     {errors.message !== '' ? <span>{errors.message}</span> : ''}
                 </div>
             </fieldset>
-            <Button text={'enviar'} disabled={isDisabled ? 'disabled' : ''} onClick={(e) => handleSubmit(e)} />
+            <Button btn={true} classStyle={'btn-normal'} text={'enviar'} disabled={isDisabled ? 'disabled' : ''} onClick={(e) => handleSubmit(e)} />
         </form >
     )
 }

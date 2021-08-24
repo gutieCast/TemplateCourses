@@ -1,6 +1,14 @@
 @import 'styles/mixins.scss';
 @import 'styles/variables.scss';
 
-#about-course {
+#acerca-de {
     position: absolute;
+    .PDF-downloader & {
+        position: absolute;
+        bottom: 140px;
+        right: 90px;
+        @include breakpoint-3 {
+            bottom: 170px;
+        }
+    }
 }

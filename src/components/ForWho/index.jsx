@@ -7,7 +7,7 @@ import 'components/ForWho/for-who.scss'
 const ForWho = () => {
     const { para_quien } = infoCourse
     return (
-        <section id="for-who">
+        <section id="para-quien">
             {
                 window.innerWidth < 768
                     ?

@@ -1,5 +1,5 @@
 const infoCourse = {
-    nameCourse: ['diplomado en', <br />, 'reactivación económica de santa cruz', <br />, 'a través del turismo'],
+    nameCourse: ['diplomado en', <br />, 'reactivación económica a través del turismo'],
     abrev: 'RESCAT',
     acerca_de: ['Más allá de la crisis sanitaria, la pandemia de la covid-19 ha ocasionado una de las crisis sociales y económicas de mayor magnitud en las últimas décadas, afectando fuertemente a todos los ámbitos sociales y comerciales de Santa Cruz. Para ayudar a nuestros conciudadanos, RESCAT propone un modelo para revitalizar (rescatar) la economía de nuestra ciudad a través del TURISMO COMERCIAL & PATRIMONIAL.', <br />, 'RESCAT, tiene por propósito desarrollar la marca de “Santa Cruz” como la ciudad ideal para el turismo de negocios y el emprendimiento; educando y formando a los profesionales para afrontar los desafíos de potenciar una marca ciudad ampliamente comercial, tecnológica y cultural. Conformando así, "la ciudad de los empresarios del futuro".'],
     solution:
@@ -356,7 +356,7 @@ const infoCourse = {
         {
             item: 3,
             title: ['diplomado', <br />, 'completo'],
-            price: '3500',
+            price: '3.500',
             label: '/ 12 módulos',
             recomended: true,
             extraItem: 'Ahorras hasta 42%',
@@ -372,7 +372,7 @@ const infoCourse = {
         {
             item: 2,
             title: ['sistema', <br />, 'tetra-modular'],
-            price: '1600',
+            price: '1.600',
             label: '/ 4 módulos',
             recomended: false,
             extraItem: 'Ahorras hasta 20%',

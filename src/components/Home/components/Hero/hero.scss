@@ -49,16 +49,8 @@
         }
         .link-button {
             text-decoration: none;
-            margin-top: 270px;
-            z-index: 9999;
-            // .button {
-            //     @include breakpoint-3 {
-            //         bottom: 333px;
-            //         &:hover {
-            //             scale: 0.5;
-            //         }
-            //     }
-            // }
+            position: relative;
+            bottom: -20%;
         }
         
     }

@@ -6,7 +6,7 @@ import 'components/Contact/contact.scss'
 
 const Contact = () => {
     return (
-        <section id="contact">
+        <section id="contacto">
             <ContentBox
                 theme={'ligth'}
                 title={'Contacto'}
@@ -34,15 +34,15 @@ const Contact = () => {
                             </p>
                             <ul className="social-media-list">
                                 <li className="social-media-item">
-                                    <a href="https://www.facebook.com/ipaxstudiosc" className="uk-animation-scale-down uk-icon-button link-sm" uk-icon="facebook" ratio="2">
+                                    <a href="https://www.facebook.com/ipaxstudiosc" className="uk-animation-scale-down uk-icon-link link-sm" uk-icon="icon: facebook; ratio: 2">
                                     </a>
                                 </li>
                                 <li className="social-media-item">
-                                    <a href="https://www.instagram.com/ipaxstudio/?hl=es-la" className="uk-animation-scale-down uk-icon-button link-sm" uk-icon="instagram" ratio="2">
+                                    <a href="https://www.instagram.com/ipaxstudio/?hl=es-la" className="uk-animation-scale-down uk-icon-link link-sm" uk-icon="icon: instagram; ratio: 2">
                                     </a>
                                 </li>
                                 <li className="social-media-item">
-                                    <a href="https://www.linkedin.com/company/ipaxstudio" className="uk-animation-scale-down uk-icon-button link-sm" uk-icon="linkedin" ratio="2">
+                                    <a href="https://www.linkedin.com/company/ipaxstudio" className="uk-animation-scale-down uk-icon-link link-sm" uk-icon="icon: linkedin; ratio: 2">
                                     </a>
                                 </li>
                             </ul>

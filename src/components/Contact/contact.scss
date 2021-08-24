@@ -1,7 +1,7 @@
 @import "styles/variables.scss";
 @import "styles/mixins.scss";
 
-#contact {
+#contacto {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,7 +16,7 @@
         width: 90%;
         .headline-text {
             color: $ligth-gray;
-            font-size: $r;
+            font-size: $s;
             font-family: $title-font;
             line-height: 1.2;
             text-align: center;
@@ -63,7 +63,7 @@
                     letter-spacing: 2px;
                     text-transform: uppercase;
                     text-align: center;
-                    color: $blue;
+                    color: $main-color;
                 }
                 .social-media-list {
                     display: flex;
@@ -72,7 +72,7 @@
                     padding: 0;
                     .social-media-item {
                         .link-sm {
-                            color: $blue;
+                            color: $main-color;
                         }
                         
                     }
@@ -84,6 +84,9 @@
             width: 100%;
             @include breakpoint-4 {
                 width: 50%;
+            }
+            input {
+                font-family: $main-font;
             }
         }
     }

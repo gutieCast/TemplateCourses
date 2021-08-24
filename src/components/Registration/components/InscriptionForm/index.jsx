@@ -60,6 +60,10 @@ const InscriptionForm = () => {
         setGoPay(true)
     }
 
+    useEffect(() => {
+        console.log('toUp!');
+        window.scrollTo(0, 0)
+    }, [])
 
     useEffect(() => {
         if (firstRender.current) {
@@ -147,7 +151,7 @@ const InscriptionForm = () => {
                                 {errors.paymentModality !== '' ? <span>{errors.paymentModality}</span> : ''}
                             </div>
                         </fieldset>
-                        <Button text={'enviar'} disabled={isDisabled ? 'disabled' : ''} onClick={(e) => handleSubmit(e)} />
+                        <Button btn={true} classStyle={'btn-dark'} text={'enviar'} disabled={isDisabled ? 'disabled' : ''} onClick={(e) => handleSubmit(e)} />
                     </form >
                 </ContentBox>
             </section>

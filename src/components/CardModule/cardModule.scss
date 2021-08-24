@@ -1,97 +1,85 @@
 @import "styles/variables.scss";
 @import "styles/mixins.scss";
 
-    .card-container-module {
-        margin: 10px;
-        padding: 0;
-        height: max-content;
-        width: 221px;
-        @include breakpoint-3 {
-            width: 237px;
+.card-container-module {
+    margin: 10px;
+    padding: 0;
+    height: 590px;
+    width: 221px;
+    @include breakpoint-3 {
+        width: 237px;
+    }
+    @include breakpoint-4 {
+        width: 350px;
+    }
+    @include breakpoint-6 {
+        height: 665px;
+    }
+    &:hover {
+        box-shadow: 0 5px 5px $supplementary-color;
+        cursor: pointer;
+    }
+    .module-card {
+        height: 100%;
+        .card-img {
+            width: 100%;
         }
-        @include breakpoint-4 {
-            width: 350px;
-        }
-        @include breakpoint-6 {
-            height: 665px;
-        }
-        &:hover {
-            box-shadow: 0 5px 5px $green;
-            cursor: pointer;
-        }
-        .module-card {
-            height: 100%;
-            .card-img {
-                width: 100%;
+        .card-info {
+            height: max-content;
+            position: relative;
+            .label-module {
+                position: absolute;
+                top: 5%;
+                right: 5%;
+                background-color: $supplementary-color;
+                color: $white;
+                font-family: $title-font;
+                font-weight: bolder;
+                display: inline-block;
             }
-            .card-info {
-                height: max-content;
-                .label-module {
-                    background-color: $green;
-                    color: $white;
-                    font-family: $title-font;
-                    font-weight: bolder;
-                    display: inline-block;
-                }
-                .title-module {
-                    color: $blue;
-                    font-family: $title-font;
-                    font-size: $xs;
-                    font-weight: bolder;
-                    margin: 27px auto;
-                    & .expanded {
-                        color: $orange;
-                        font-size: $s;
-                    }
-                }
-                .text-module {
-                    color: $gray;
-                    font-family: $main-font;
-                    font-size: $xs;
-                    & .expanded {
-                        color: $orange;
-                        font-size: $s;
-                    }
-                }
+            .title-module {
+                color: $main-color;
+                font-family: $title-font;
+                font-size: $xs;
+                font-weight: bolder;
+                margin: 27px auto;
+            }
+            .text-module {
+                color: $info-color;
+                font-family: $main-font;
+                font-size: $xs;
             }
         }
     }
-    .info-expanded {      
-    background-color: $blue;
-    padding: 50px;
-    width: 60%;
-    }
+}
 
-    .modal {
-    // top: 50%;
-    // left: 50%;
-    // right: auto;
-    // bottom: auto;
-    // margin-right: -50%;
-    // transform: translate(-50%, -50%);
-    height: 90vh; // <-- This sets the height
-    margin-top: 67px;
-    position: relative;
-    max-height: 100vh;
+.modal {
+    height: auto; // <-- This sets the height
+    margin-top: 84px;
+    position: absolute;
+    max-height: 100%;
     overflow-y: auto; // <-- This tells the modal to scrol
+    width: 100%;
     .title-section-center {
         color: $white;
         padding: 0;
+        margin: 0;
     }
     .modal-body {
-        // background-color: $blue;
-        // padding: 100px;
+        background-color: $main-color;
+        padding: 0 30px 100px 30px;
+        ;
         .modal-button-close {
             position: absolute;
             color: $white;
-            left: 5%;
-            top: 5%;
+            right: 10%;
+            top: 4%;
         }
         .modal-title {
-            color: $green;
+            color: $supplementary-color;
         }
         .modal-subtitle {
-            color: $green;
+            color: $supplementary-color;
         }
         .modal-text {
             color: $white;

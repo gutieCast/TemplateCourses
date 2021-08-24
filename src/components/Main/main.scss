@@ -6,8 +6,4 @@
     height: auto;
     margin-top: 85px;
     width: 100%;
-    @include breakpoint-4 {
-        // padding: 85px 50px 190px 50px;
-        flex-direction: row;
-    }
 }

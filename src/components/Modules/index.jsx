@@ -4,7 +4,7 @@ import { SlideNav } from 'components/SlideNav'
 
 const Modules = () => {
     return (
-        <section id="modules">
+        <section id="modulos">
             <ContentBox
                 hideDiv={true}
                 theme={'ligth'}

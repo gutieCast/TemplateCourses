@@ -13,7 +13,7 @@
         width: 350px;
     }
     &:hover {
-        box-shadow: 0 5px 5px $green;
+        box-shadow: 0 5px 5px $supplementary-color;
         cursor: pointer;
     }
     .teacher-card {
@@ -23,41 +23,41 @@
         .card-img {
             width: 100%;
             height: 100%;
-        }
-        .info-module-spread-out {
-            display: none;
-            position: absolute; 
-            &.hide { 
-                opacity: 0;
-                height: 0; 
-                transform: translateY(-50px);
-                transition: all ease-in 1s; 
-            }
-            &.shown {
-                top: 0%;
-                display: flex;
-                background-color: transparentize($blue, .1);
-                padding: 10px 5px;
-                opacity: 1;
-                bottom: 0%;
-                align-items: center;
-                justify-content: center;
-                transform: translateY(0px);
-                transition: all ease-in 1s; 
-            }
-            .title-spread-out {
-                color: $green;
-                font-family: $title-font;
-                font-size: $xs;
-                font-weight: bolder;
-                margin: 17px auto;
-            }
-            .text-spread-out {
-                color: $white;
-                font-family: $main-font;
-                font-size: $xs;
-                margin: auto;
-                padding: 30px;
+            .info-module-spread-out {
+                display: none;
+                position: absolute; 
+                &.hide { 
+                    opacity: 0;
+                    height: 0; 
+                    transform: translateY(-50px);
+                    transition: all ease-in 1s; 
+                }
+                &.shown {
+                    top: 0%;
+                    display: flex;
+                    background-color: transparentize($main-color, .1);
+                    padding: 10px 5px;
+                    opacity: 1;
+                    bottom: 0%;
+                    align-items: center;
+                    justify-content: center;
+                    transform: translateY(0px);
+                    transition: all ease-in 1s; 
+                }
+                .title-spread-out {
+                    color: $supplementary-color;
+                    font-family: $title-font;
+                    font-size: $xs;
+                    font-weight: bolder;
+                    margin: 17px auto;
+                }
+                .text-spread-out {
+                    color: $white;
+                    font-family: $main-font;
+                    font-size: $xs;
+                    margin: auto;
+                    padding: 30px;
+                }
             }
         }
     }

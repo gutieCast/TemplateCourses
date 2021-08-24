@@ -1,9 +1,9 @@
 import React from 'react'
 import { ContentBox, SlideNav } from 'components'
 
-const Teachers = ({ teachers }) => {
+const Teachers = () => {
     return (
-        <section id="teachers">
+        <section id="docentes">
             <ContentBox
                 hideDiv={true}
                 theme={'ligth'}

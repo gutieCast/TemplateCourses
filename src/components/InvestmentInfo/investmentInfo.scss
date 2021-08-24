@@ -1,13 +1,18 @@
 @import "styles/variables.scss";
 @import "styles/mixins.scss";
 
-#investment-info {
+#inversion {
     padding-bottom: 90px;
+    .title-section-center {
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
     .cards-grid {
         border-color: transparent;
         max-width: 1300px;
-        padding: 30px;
+        padding: 0 30px;
         @include breakpoint-3 {
+            padding: 30px;
             align-items: center;
             justify-items: center;
             box-sizing: content-box;
@@ -18,6 +23,7 @@
             grid-template-columns: repeat(3, 1fr);
         }
         @include breakpoint-4 {
+            grid-gap: 50px;
             grid-template-columns: repeat(3, 1fr);
         }
     }

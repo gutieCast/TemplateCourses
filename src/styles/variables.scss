@@ -1,11 +1,10 @@
 // COLOR
 
-$orange: #FF4B4B;
+$main-color: #002D59;
+$supplementary-color: #1EC88F;
+$complementary-color: #FF4B4B;
+$info-color: #707070;
 $ligth-gray: #B2B2B2;
-$ligth-blue: #F2FBFF;
-$gray: #707070;
-$green: #1EC88F;
-$blue: #002D59;
 $white: #FFFFFF;
 
 //FONTS & SIZES
@@ -15,8 +14,7 @@ $title-font: 'Poppins', sans-serif;
 
 $xxs: 9px;
 $xs: 15px;
-$s: 19px;
-$r: 20px;
+$s: 20px;
 $main: 25px;
 $title-s: 28px;
 $title-m: 35px;
@@ -29,8 +27,3 @@ $button: 19px;
 //HEIGHTS & WIDTHS
 
 $height-header: 85px;
-
-$height-hero-1: 812px;
-// $height-hero-2: 1280px;
-// $height-hero-3: 2400px;
-// $height-hero-4: 3000px;

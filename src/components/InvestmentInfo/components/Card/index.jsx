@@ -18,21 +18,21 @@ const Card = ({ recomended, title, price, label, extraItem, description, linkBut
             {
                 recomended &&
                 <div className="recomended-container">
-                    <p className="recomended">
+                    <p className="recomended-tag">
                         opción recomendada
                     </p>
                 </div>
             }
-            <div className="uk-card uk-card-default uk-card-body card-investment" style={{ backgroundColor: `${recomended ? '#002D59' : 'transparent'}` }}>
-                <h3 className="uk-card-title title-card" style={{ color: `${recomended ? 'white' : '#002D59'}` }}>
+            <div className={`uk-card uk-card-default uk-card-body card-investment ${recomended ? 'recomended' : ''}`}>
+                <h3 className={`uk-card-title title-card ${recomended ? 'recomended' : ''}`}>
                     {title}
                 </h3>
-                <spam className="info-price" style={{ color: `${recomended ? 'white' : '#002D59'}` }}>
+                <spam className={`info-price ${recomended ? 'recomended' : ''}`}>
                     Bs.
-                    <spam className="price" style={{ color: `${recomended ? 'white' : '#002D59'}` }}>
-                        {`${price}`}
+                    <spam className={`price ${recomended ? 'recomended' : ''}`}>
+                        {` ${price}`}
                     </spam>
-                    <spam className="per-plan" style={{ color: `${recomended ? 'white' : '#002D59'}` }}>
+                    <spam className={`per-plan ${recomended ? 'recomended' : ''}`}>
                         {label}
                     </spam>
                 </spam>
@@ -43,18 +43,18 @@ const Card = ({ recomended, title, price, label, extraItem, description, linkBut
                     </p>
 
                 }
-                <ul className="description-investment" style={{ color: `${recomended ? 'white' : '#002D59'}` }}>
+                <ul className={`description-investment ${recomended ? 'recomended' : ''}`}>
                     {
                         description.map((item, i) => {
                             return (
-                                <li key={`plan-item-${i}`} style={{ color: `${recomended ? 'white' : '#002D59'}` }}>
+                                <li key={`plan-item-${i}`} className={`${recomended ? 'recomended' : ''}`}>
                                     {item}
                                 </li>
                             )
                         })
                     }
                 </ul>
-                <Button text="¡inscribirse!" classStyle={`${recomended ? 'btn-clear' : '' } `} onClick={() => handleButton({ linkButton })} />
+                <Button btn={true} text="¡inscribirse!" classStyle={`${recomended ? 'btn-dark' : 'btn-normal'} `} onClick={() => handleButton({ linkButton })} />
             </div>
         </div>
     )

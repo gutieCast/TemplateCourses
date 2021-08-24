@@ -18,7 +18,7 @@ button {
 
 .link-button {
     align-items: center;
-    background-color: $green;
+    background-color: $supplementary-color;
     border: none;
     border-radius: 5px;
     color: $white;
@@ -33,66 +33,61 @@ button {
     min-width: 200px;
     max-width: max-content;
     cursor: pointer;
-    &.btn-clear {
+    &.btn-dark {
         &:hover {
             background-color: transparent;
-            color: $green;
-            border: solid 1px $green;
+            color: $supplementary-color;
+            border: solid 1px $supplementary-color;
             cursor: pointer;
             transition: all ease-in-out .5s;
         }  
     }
     &:hover {
-        background-color: $blue;
-        color: $green;
+        background-color: $main-color;
+        color: $supplementary-color;
         text-decoration: none;
         transition: all ease-in-out .5s;
     }
 }
 
 .btn {
-    background-color: $green;
-    border: solid 1px $green;
+    background-color: $supplementary-color;
+    border: solid 1px $supplementary-color;
     border-radius: 5px;
     color: $white;
     font-family: $title-font;
     font-size: $button;
     font-weight: 700;
     letter-spacing: 1.4;
-    margin: auto;
+    margin: 0 auto;
     max-width: 100%;
     text-transform: uppercase;
     text-decoration: none;
-        &.btn-clear {
-            &:hover:enabled,
-            &:focus {
-                background-color: transparent;
-                color: $green;
-                border: solid 1px $green;
-                cursor: pointer;
-                transition: all ease-in-out .5s;
-            }  
-        }
-        &:hover:enabled {
-            background-color: $blue;
-            border: solid 1px $blue;
-            color: $green;
+    &.btn-normal {
+        &:hover:enabled,
+        &:focus {
+            background-color: $main-color;
+            border: solid 1px $main-color;
+            color: $supplementary-color;
             cursor: pointer;
             transition: all ease-in-out .5s;
         }
-        &:disabled  {
-            background-color: transparent;
-            border: solid 1px $white;
-            color: gray;
-            cursor: wait;
-            transition: all ease-in-out .5s;
-        }
-        &.PDF-downloader {
-            position: absolute;
-            bottom: 140px;
-            right: 90px;
-            @include breakpoint-3 {
-                bottom: 170px;
-            }
     }
+    &.btn-dark {
+        &:hover:enabled,
+        &:focus {
+            background-color: transparent;
+            color: $supplementary-color;
+            border: solid 1px $supplementary-color;
+            cursor: pointer;
+            transition: all ease-in-out .5s;
+        }  
+    }
+    &:disabled  {
+        background-color: transparent;
+        border: solid 1px $ligth-gray;
+        color: $info-color;
+        cursor: wait;
+        transition: all ease-in-out .5s;
+    }      
 }

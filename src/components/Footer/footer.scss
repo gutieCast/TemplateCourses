@@ -3,18 +3,106 @@
 
 #footer {
     align-items: center;
-    background-color: $gray;
+    background-color: $info-color;
     display: flex;
     flex-direction: column;
-    height: 530px;
     justify-content: center;
     @include breakpoint-3 {
         padding: 0 50px;
     }
     .logo-container-footer {
-        margin: 30px;
+        margin: 40px;
+    }
+    .main-menu {
+        &.menu-footer {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            flex-flow: wrap;
+            padding: 0;
+            width: 80%;
+            .menu-item {
+                .menu-link {
+                    font-size: $xs;
+                }
+            }
+        }
     }
     .contact-info-footer {
-        margin: 30px;
+        @include breakpoint-1 {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        @include breakpoint-3 {
+            margin: 30px;
+            display: grid;
+            grid-gap: 20px;
+            grid-template-columns: repeat(2, 1fr);
+            width: 100%;
+            text-align: center;
+        }
+        .WA-container {
+            padding: 10px;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            max-width: 100%;
+            .link-WA {
+                text-decoration: none;
+                .iconWA {
+                    color: $white;
+                    &:hover {
+                        color: $supplementary-color;
+                        transition: all ease-in-out .5s;
+                    }
+                }
+                .number {
+                    color: $white;
+                    font-family: $title-font;
+                    font-size: $xs;
+                    font-weight: 500;
+                    letter-spacing: 2px;
+                    padding-left: 5px;
+                }
+                .number:hover ~ .iconWA {
+                    color: $supplementary-color;
+                    transition: all ease-in-out .5s;
+                }  
+            }
+        }
+        .social-media-container-footer {
+            max-width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            .social-media-text-footer {
+                font-family: $title-font;
+                font-size: $xs;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                text-align: center;
+                color: $white;
+                margin: 0;
+            }
+            .social-media-list-footer {
+                display: flex;
+                align-items: center;
+                padding: 0;
+                .social-media-item-footer {
+                    padding: 0 15px;
+                    .link-sm-footer {
+                        color: $white;
+                        &:hover {
+                            color: $supplementary-color;
+                            transition: all ease-in-out .5s;
+                        }
+                    }
+                    
+                }
+            }
+        }
     }
 }

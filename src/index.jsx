@@ -1,11 +1,16 @@
-import React from 'react';
+import * as React from 'react';
 import { render } from 'react-dom';
-import { HashRouter } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+import smoothScrollPolyfill from 'smoothscroll-polyfill';
 import App from 'App';
 import 'index.scss';
 
+smoothScrollPolyfill.polyfill();
+
 render((
-  <HashRouter basename="/home">
-    <App />
-  </HashRouter>
+  <React.StrictMode>
+    <Router>
+      <App />
+    </Router>
+  </React.StrictMode>
 ), document.getElementById('root'));

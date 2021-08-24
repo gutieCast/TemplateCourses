@@ -3,14 +3,14 @@ import { ContentBox } from 'components/ContentBox'
 import { infoCourse } from 'helpers/data'
 import { Card } from 'components/InvestmentInfo/components/Card'
 import { bannerInscription } from 'helpers/images'
-import {Button} from 'components/Button'
+import { Button } from 'components/Button'
 import 'components/InvestmentInfo/investmentInfo.scss'
 
 const InvestmentInfo = () => {
     const { inversion } = infoCourse;
 
     return (
-        <section id="investment-info">
+        <section id="inversion">
             <ContentBox
                 theme="ligth"
                 title="inversión"
@@ -38,9 +38,9 @@ const InvestmentInfo = () => {
                     }
 
                 </ul>
-                <div className="banner-container-inscription" style={{backgroundImage: `url(${bannerInscription})`}}>
+                <div className="banner-container-inscription" style={{ backgroundImage: `url(${bannerInscription})` }}>
                     <h2 className="banner-text"> ¡inscríbete ahora! </h2>
-                    <Button classStyle={'btn-clear'} link="/inscribirse/" anim={'uk-animation-kenburns'} text={'¡Inscríbete!'} />
+                    <Button classStyle={'btn-dark'} link="/inscribirse/" anim={'uk-animation-kenburns'} text={'¡Inscríbete!'} />
                 </div>
 
             </ContentBox>

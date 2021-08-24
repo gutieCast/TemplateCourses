@@ -7,7 +7,7 @@ import 'components/Profits/profits.scss'
 const Profits = () => {
     const { beneficios } = infoCourse
     return (
-        <section id="profits">
+        <section id="beneficios">
             <ContentBox
                 theme={'ligth'}
                 hideDiv={true}
@@ -16,7 +16,7 @@ const Profits = () => {
             >
                 <div className="profits-content">
                     <ul className="grid-profits"
-                        uk-scrollspy="cls: uk-animation-fade; target: .profit; delay: 150; repeat: true; y: -50,50,5,-5"
+                        uk-scrollspy={`cls: uk-animation-fade; target: .profit; delay: ${window.innerWidth <= 481 ? 50 : 100}; repeat: true; y: -50,50,5,-5`}
                     >
                         {
                             beneficios.map(({ title, body }) => {

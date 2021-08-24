@@ -52,7 +52,7 @@ import qrPayment from 'assets/images/qr-payment.jpg'
 
 import logoFooterWeb from 'assets/images/logo-footer.png'
 
-export const logo = logoWeb
+export const logo = { img: logoWeb, alt: "Logo RESCAT" }
 
 export const imgHero = heroImg
 

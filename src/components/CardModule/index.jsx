@@ -5,7 +5,7 @@ import 'components/CardModule/cardModule.scss'
 
 ReactModal.setAppElement('#root')
 
-const CardModule = ({ id, idx, src, titleImg, item, title, teacher, date, content }) => {
+const CardModule = ({ id, src, titleImg, item, title, teacher, date, content }) => {
 
     const [modalIsOpen, setModalIsOpen] = useState(false)
 
@@ -17,7 +17,6 @@ const CardModule = ({ id, idx, src, titleImg, item, title, teacher, date, conten
                         <img src={src} alt={titleImg} />
                     </div>
                     <div
-                        uk-slider-parallax="x: 50,-50"
                         className="uk-card-body card-info"
                     >
                         <div className="uk-card-badge uk-label label-module">{`Módulo ${item}`}</div>
@@ -31,10 +30,11 @@ const CardModule = ({ id, idx, src, titleImg, item, title, teacher, date, conten
             <ReactModal
                 id={`info-module${id}`}
                 className="modal"
+                inset="15px"
                 isOpen={modalIsOpen}
-                shouldCloseOnOverlayClick={false}
+                shouldCloseOnOverlayClick={true}
                 onRequestClose={() => setModalIsOpen(false)}
-                preventScroll={true}
+            // preventScroll={true}
             >
                 <ContentBox
                     theme={'dark'}
@@ -42,7 +42,7 @@ const CardModule = ({ id, idx, src, titleImg, item, title, teacher, date, conten
                     hideDiv={true}
                 >
                     <div className="modal-body">
-                        <button uk-icon="close" className="uk-modal-close modal-button-close" onClick={() => setModalIsOpen(false)}></button>
+                        <button uk-icon="icon: close; ratio: 2" className="uk-modal-close modal-button-close" onClick={() => setModalIsOpen(false)}></button>
                         <p className="modal-text">{`Fecha: ${date}`}</p>
                         <div className="content-modal">
                             <h4 className="modal-subtitle">Temas:</h4>

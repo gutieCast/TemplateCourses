@@ -1,20 +1,20 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { HashLink as Link } from 'react-router-hash-link'
 import 'components/Button/button.scss'
 
-const Button = ({ text, onClick, type, link, classStyle, anim, disabled }) => {
+const Button = ({ text, onClick, type, link, classStyle, btn, disabled }) => {
     return (
         <>
             {
-                link &&
-                <Link className={`uk-animation-toggle link-button ${classStyle}`} to={link}>
+                !btn &&
+                <Link className={`uk-animation-toggle link-button ${classStyle}`} smooth to={link}>
                     {text}
                 </Link>
 
             }
             {
-                !link &&
-                <button className={`uk-button uk-button-default ${anim} btn ${classStyle}`} disabled={disabled} type={type} onClick={onClick}>
+                btn &&
+                <button className={`uk-button uk-button-default btn ${classStyle}`} disabled={disabled} type={type} onClick={onClick}>
                     {text}
                 </button>
             }

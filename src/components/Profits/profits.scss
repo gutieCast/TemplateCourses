@@ -1,7 +1,7 @@
 @import 'styles/mixins.scss';
 @import 'styles/variables.scss';
 
-#profits {
+#beneficios {
     .profits-content {
         // margin: 15px;
         width: 100%;
@@ -11,55 +11,54 @@
         }
         @include breakpoint-4 {
             padding: 0 90px;
-        }
-        
-    }
-    .grid-profits {
-        @include breakpoint-1 {
-            display: flex;
-            flex-flow: column nowrap;
-            justify-content: center;
-            padding: 0;
-        }
-        @include breakpoint-2 {
-            box-sizing: content-box;
-            display: grid;
-            grid-gap: 20px;
-            grid-template-columns: repeat(2, 1fr);
-            grid-auto-rows: minmax(100px, auto);
-        }
-        @include breakpoint-3 {
-            grid-template-columns: repeat(3, 1fr);
-        }
-        @include breakpoint-4 {
-            grid-gap: 50px;
-        }
-        .profit {
-            display: block;
-            height: inherit;
-            text-align: center;
-            padding: 23px 0;
-            .icon-profit {
-                padding: 15px;
+        }   
+        .grid-profits {
+            @include breakpoint-1 {
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: center;
+                padding: 0;
             }
-            .title-profit {
-                color: $blue;
-                font-family: $title-font;
-                font-weight: bolder;
-                line-height: 1.4;
-                margin: auto;
-                text-transform: uppercase;
+            @include breakpoint-2 {
+                box-sizing: content-box;
+                display: grid;
+                grid-gap: 20px;
+                grid-template-columns: repeat(2, 1fr);
+                grid-auto-rows: minmax(100px, auto);
             }
-            .text-profit {
-                color: $blue;
-                font-family: $main-font;
-                line-height: 1.5;
-                margin: 1rem auto;
-                @include breakpoint-1 {
-                    font-size: $xs;
+            @include breakpoint-3 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            @include breakpoint-4 {
+                grid-gap: 50px;
+            }
+            .profit {
+                display: block;
+                height: inherit;
+                text-align: center;
+                padding: 23px 0;
+                .icon-profit {
+                    padding: 15px;
                 }
-                @include breakpoint-3 {
-                    font-size: $xs + 1;
+                .title-profit {
+                    color: $main-color;
+                    font-family: $title-font;
+                    font-weight: bolder;
+                    line-height: 1.4;
+                    margin: auto;
+                    text-transform: uppercase;
+                }
+                .text-profit {
+                    color: $main-color;
+                    font-family: $main-font;
+                    line-height: 1.5;
+                    margin: 1rem auto;
+                    @include breakpoint-1 {
+                        font-size: $xs;
+                    }
+                    @include breakpoint-3 {
+                        font-size: $xs + 1;
+                    }
                 }
             }
         }

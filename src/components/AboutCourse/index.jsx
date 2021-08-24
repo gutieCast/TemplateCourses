@@ -3,21 +3,20 @@ import { imgAboutCourse } from 'helpers/images'
 import { imgSolution } from 'helpers/images'
 import { ContentBox } from 'components/ContentBox'
 import { infoCourse } from 'helpers/data'
-import { Button } from 'components/Button'
+import { Link } from 'react-router-dom'
 
 const AboutCourse = () => {
     const { abrev, acerca_de, solution } = infoCourse
     return (
-        <section id='about-course'>
+        <section id='acerca-de'>
             <ContentBox
                 theme={'light'}
                 title={`Sobre ${abrev}`}
                 imgRoute={imgAboutCourse}
                 body={acerca_de}
                 flowContent={'normal'}>
-                <Button classStyle={'PDF-downloader'}
-                    link={process.env.PUBLIC_URL + '/files/guia_educación_sexual.pdf'} text={'descargar pdf'}
-                />
+                <Link to={process.env.PUBLIC_URL + '/files/informacion-sobre-rescat.pdf'} target="_blank" download>Descargar pdf
+                </Link>
             </ContentBox>
             <ContentBox
                 theme={'dark'}

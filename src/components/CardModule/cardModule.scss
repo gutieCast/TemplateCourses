@@ -1,88 +1,93 @@
 @import "styles/variables.scss";
 @import "styles/mixins.scss";
 
-.card-container-module {
-    margin: 10px;
-    padding: 0;
-    height: 590px;
-    width: 221px;
-    @include breakpoint-3 {
-        width: 237px;
-    }
-    @include breakpoint-4 {
-        width: 350px;
-    }
-    @include breakpoint-6 {
-        height: 665px;
-    }
-    &:hover {
-        box-shadow: 0 5px 5px $supplementary-color;
-        cursor: pointer;
-    }
-    .module-card {
-        height: 100%;
-        .card-img {
-            width: 100%;
-        }
-        .card-info {
-            height: max-content;
-            position: relative;
-            .label-module {
-                position: absolute;
-                top: 5%;
-                right: 5%;
-                background-color: $supplementary-color;
-                color: $white;
-                font-family: $title-font;
-                font-weight: bolder;
-                display: inline-block;
-            }
-            .title-module {
-                color: $main-color;
-                font-family: $title-font;
-                font-size: $xs;
-                font-weight: bolder;
-                margin: 27px auto;
-            }
-            .text-module {
-                color: $info-color;
-                font-family: $main-font;
-                font-size: $xs;
-            }
-        }
-    }
-}
-
-.modal {
-    height: auto; // <-- This sets the height
-    margin-top: 84px;
-    position: absolute;
-    max-height: 100%;
-    overflow-y: auto; // <-- This tells the modal to scrol
-    width: 100%;
-    .title-section-center {
-        color: $white;
+.card-item-module {
+    display: flex;
+    flex-flow: row wrap;
+    width: min-content;
+    .card-container-module {
+        margin: 10px;
         padding: 0;
-        margin: 0;
+        height: 590px;
+        width: 221px;
+        @include breakpoint-3 {
+            width: 237px;
+        }
+        @include breakpoint-4 {
+            width: 350px;
+        }
+        @include breakpoint-6 {
+            height: 665px;
+        }
+        &:hover {
+            box-shadow: 0 5px 5px $supplementary-color;
+            cursor: pointer;
+        }
+        .module-card {
+            height: 100%;
+            .card-img {
+                width: 100%;
+            }
+            .card-info {
+                height: max-content;
+                position: relative;
+                .label-module {
+                    position: absolute;
+                    top: 5%;
+                    right: 5%;
+                    background-color: $supplementary-color;
+                    color: $white;
+                    font-family: $title-font;
+                    font-weight: bolder;
+                    display: inline-block;
+                }
+                .title-module {
+                    color: $main-color;
+                    font-family: $title-font;
+                    font-size: $xs;
+                    font-weight: bolder;
+                    margin: 27px auto;
+                }
+                .text-module {
+                    color: $info-color;
+                    font-family: $main-font;
+                    font-size: $xs;
+                }
+            }
+        }
     }
-    .modal-body {
-        background-color: $main-color;
-        padding: 0 30px 100px 30px;
-        ;
-        .modal-button-close {
-            position: absolute;
+    
+    .modal {
+        height: auto; // <-- This sets the height
+        margin-top: 84px;
+        position: absolute;
+        max-height: 100%;
+        overflow-y: auto; // <-- This tells the modal to scrol
+        width: 100%;
+        .title-section-center {
             color: $white;
-            right: 10%;
-            top: 4%;
+            padding: 0;
+            margin: 0;
         }
-        .modal-title {
-            color: $supplementary-color;
-        }
-        .modal-subtitle {
-            color: $supplementary-color;
-        }
-        .modal-text {
-            color: $white;
+        .modal-body {
+            background-color: $main-color;
+            padding: 0 30px 100px 30px;
+            ;
+            .modal-button-close {
+                position: absolute;
+                color: $white;
+                right: 10%;
+                top: 4%;
+            }
+            .modal-title {
+                color: $supplementary-color;
+            }
+            .modal-subtitle {
+                color: $supplementary-color;
+            }
+            .modal-text {
+                color: $white;
+            }
         }
     }
 }

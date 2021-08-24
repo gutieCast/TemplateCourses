@@ -26,7 +26,7 @@ const SlideNav = ({ modules, teachers }) => {
     }
 
     return (
-        <div uk-slider="autoplay: true; autoplay-interval: 2500; pause-on-hover: true" className="uk-position-relative uk-visible-toggle uk-light slider" tabIndex="-1" >
+        <div uk-slider="autoplay: true; autoplay-interval: 2500; pause-on-hover: true; center: true" className="uk-position-relative uk-visible-toggle uk-light slider" tabIndex="-1" >
             <div class="uk-position-relative position-slider">
                 <div className="uk-slider-container uk-grid slider-container uk-child-width-l-6@l">
                     <ul className={`uk-slider-items cards-container ${modules ? 'large' : ''}`}>
@@ -69,10 +69,10 @@ const SlideNav = ({ modules, teachers }) => {
                         }
                     </ul>
                 </div>
-                <a class="uk-position-center-left button-slider" href="#" uk-slider-item="previous">
+                <a class="uk-position-center-left button-slider left" href="#" uk-slider-item="previous">
                     <span uk-icon="icon: chevron-left; ratio: 2"></span>
                 </a>
-                <a class="uk-position-center-right button-slider" href="#" uk-slider-item="next">
+                <a class="uk-position-center-right button-slider right" href="#" uk-slider-item="next">
                     <span uk-icon="icon: chevron-right; ratio: 2"></span>
                 </a>
             </div>

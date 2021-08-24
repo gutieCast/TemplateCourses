@@ -1,14 +1,30 @@
 @import 'styles/mixins.scss';
 @import 'styles/variables.scss';
 
-#acerca-de {
-    position: absolute;
-    .PDF-downloader & {
-        position: absolute;
-        bottom: 140px;
-        right: 90px;
-        @include breakpoint-3 {
-            bottom: 170px;
-        }
+.PDF-downloader {
+    align-items: center;
+    background-color: $supplementary-color;
+    border: none;
+    border-radius: 5px;
+    color: $white;
+    font-family: $title-font;
+    font-size: $button;
+    font-weight: 700;
+    letter-spacing: 1.4;
+    text-transform: uppercase;
+    display: flex;
+    height: 55px;
+    justify-content: center;
+    min-width: 200px;
+    max-width: max-content;
+    cursor: pointer;
+    &:hover {
+        background-color: $main-color;
+        color: $supplementary-color;
+        text-decoration: none;
+        transition: all ease-in-out .5s;
+    }
+    @include breakpoint-3 {
+        bottom: 170px;
     }
 }

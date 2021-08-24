@@ -4,6 +4,7 @@ import { imgSolution } from 'helpers/images'
 import { ContentBox } from 'components/ContentBox'
 import { infoCourse } from 'helpers/data'
 import { Link } from 'react-router-dom'
+import 'components/AboutCourse/aboutCourse.scss'
 
 const AboutCourse = () => {
     const { abrev, acerca_de, solution } = infoCourse
@@ -15,7 +16,10 @@ const AboutCourse = () => {
                 imgRoute={imgAboutCourse}
                 body={acerca_de}
                 flowContent={'normal'}>
-                <Link to={process.env.PUBLIC_URL + '/files/informacion-sobre-rescat.pdf'} target="_blank" download>Descargar pdf
+                <Link
+                    className="PDF-downloader"
+                    to={process.env.PUBLIC_URL + '/files/informacion-sobre-rescat.pdf'} target="_blank" download>
+                    Descargar pdf
                 </Link>
             </ContentBox>
             <ContentBox

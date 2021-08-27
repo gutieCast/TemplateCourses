@@ -1,6 +1,6 @@
 import React from 'react'
-import { logos } from 'helpers/images.js'
-import 'components/SponsorsLogos/sponsorsLogos.scss'
+import { logos } from '../../helpers/images'
+import './sponsorsLogos.scss'
 
 const SponsorsLogos = () => {
     return (

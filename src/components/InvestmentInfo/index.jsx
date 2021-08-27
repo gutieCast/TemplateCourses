@@ -1,10 +1,10 @@
 import React from 'react'
-import { ContentBox } from 'components/ContentBox'
-import { infoCourse } from 'helpers/data'
-import { Card } from 'components/InvestmentInfo/components/Card'
-import { bannerInscription } from 'helpers/images'
-import { Button } from 'components/Button'
-import 'components/InvestmentInfo/investmentInfo.scss'
+import { ContentBox } from '../ContentBox'
+import { infoCourse } from '../../helpers/data'
+import { Card } from './components/Card'
+import { bannerInscription } from '../../helpers/images'
+import { Button } from '../Button'
+import './investmentInfo.scss'
 
 const InvestmentInfo = () => {
     const { inversion } = infoCourse;

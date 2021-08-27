@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import PhoneInput from 'react-phone-number-input';
-import { validations } from 'helpers/validations';
-import { Button } from 'components/Button';
-import 'components/Contact/components/ContactForm/contactForm.scss'
+import { validations } from '../../../../helpers/validations';
+import { Button } from '../../../Button';
+import './contactForm.scss'
 
 const ContactForm = () => {
     /////////////////////////////////////////////////////VALIDATIONS

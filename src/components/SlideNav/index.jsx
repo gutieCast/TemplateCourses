@@ -1,9 +1,9 @@
 import React from 'react'
-import { infoCourse } from 'helpers/data'
-import { imgModules, imgTeachers } from 'helpers/images'
-import { CardModule } from 'components/CardModule';
-import { CardTeacher } from 'components/CardTeachers';
-import 'components/SlideNav/slideNav.scss'
+import { infoCourse } from '../../helpers/data'
+import { imgModules, imgTeachers } from '../../helpers/images'
+import { CardModule } from '../CardModule';
+import { CardTeacher } from '../CardTeachers';
+import './slideNav.scss'
 
 const SlideNav = ({ modules, teachers }) => {
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import 'components/InvestmentInfo/components/Card/card.scss'
-import { Button } from 'components'
+import { Button } from '../../../Button'
+import './card.scss'
 
 const Card = ({ recomended, title, price, label, extraItem, description, linkButton }) => {
 
@@ -10,7 +10,7 @@ const Card = ({ recomended, title, price, label, extraItem, description, linkBut
     const handleButton = (optionSelected) => {
         console.log('selected: ' + optionSelected);
         sessionStorage.setItem('option', optionSelected)
-        history.push("/inscribirse")
+        history.push(`${process.env.PUBLIC_URL}/inscribirse`)
     }
 
     return (

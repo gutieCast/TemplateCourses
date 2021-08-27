@@ -1,14 +1,14 @@
 import React from 'react'
-import { logoFooter } from 'helpers/images'
-import { SponsorsLogos } from 'components/SponsorsLogos'
-import Menu from 'components/Menu'
-import 'components/Footer/footer.scss'
+import { logoWhite } from '../../helpers/images'
+import { SponsorsLogos } from '../SponsorsLogos'
+import Menu from '../Menu'
+import './footer.scss'
 
 const Footer = () => {
     return (
         <footer id="footer">
             <div className="logo-container-footer" style={{ backgroundColor: '#7070707' }}>
-                <img src={logoFooter} alt="RESCAT logo" />
+                <img src={logoWhite} alt="RESCAT logo" />
             </div>
             <Menu styleName="menu-footer" styleAnimation={"uk-animation-scale-down"} />
             <div className="contact-info-footer">

@@ -1,6 +1,6 @@
 import React from 'react'
 import { HashLink as Link } from 'react-router-hash-link'
-import 'components/Button/button.scss'
+import './button.scss'
 
 const Button = ({ text, onClick, type, link, classStyle, btn, disabled }) => {
     return (

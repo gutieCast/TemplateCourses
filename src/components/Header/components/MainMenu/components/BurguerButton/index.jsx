@@ -1,5 +1,5 @@
 import React from 'react'
-import 'components/Header/components/MainMenu/components/BurguerButton/burguerButton.scss'
+import './burguerButton.scss'
 
 const BurguerButton = ({ children }) => {
     const body = document.querySelector('body');

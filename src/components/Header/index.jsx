@@ -1,7 +1,7 @@
 import React from 'react';
-import { Logo } from 'components/Header/components/Logo';
-import { MainMenu } from 'components/Header/components/MainMenu';
-import 'components/Header/header.scss';
+import { Logo } from './components/Logo'
+import { MainMenu } from './components/MainMenu';
+import './header.scss';
 
 const Header = () => {
     return (

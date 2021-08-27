@@ -1,10 +1,10 @@
 import React from 'react'
-import { imgAboutCourse } from 'helpers/images'
-import { imgSolution } from 'helpers/images'
-import { ContentBox } from 'components/ContentBox'
-import { infoCourse } from 'helpers/data'
 import { Link } from 'react-router-dom'
-import 'components/AboutCourse/aboutCourse.scss'
+import { infoCourse } from '../../helpers/data'
+import { imgAboutCourse } from '../../helpers/images'
+import { imgSolution } from '../../helpers/images'
+import { ContentBox } from '../ContentBox'
+import './aboutCourse.scss'
 
 const AboutCourse = () => {
     const { abrev, acerca_de, solution } = infoCourse

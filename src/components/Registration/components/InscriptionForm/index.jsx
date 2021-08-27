@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Redirect, useParams } from 'react-router-dom'
-import { ContentBox } from 'components'
-import { Button } from 'components/Button'
-import { validations } from 'helpers/validations'
 import PhoneInput from 'react-phone-number-input'
+import { ContentBox } from '../../../ContentBox'
+import { Button } from '../../../Button'
+import { validations } from '../../../../helpers/validations'
 import 'react-phone-number-input/style.css'
-import 'components/Registration/components/InscriptionForm/inscriptionForm.scss'
+import '../inscription.scss'
 
 const InscriptionForm = () => {
 
@@ -92,7 +92,7 @@ const InscriptionForm = () => {
 
     return (
         <>
-            {goPay && (<Redirect to="/modo-de-pago" />)}
+            {goPay && (<Redirect to={`${process.env.PUBLIC_URL}/modo-de-pago`} />)}
             <section id="registrer-form" className="inscription">
                 <ContentBox
                     theme={'dark'}

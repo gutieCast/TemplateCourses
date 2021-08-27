@@ -1,5 +1,5 @@
 import React from 'react'
-import 'components/ContentBox/contentBox.scss'
+import './contentBox.scss'
 
 const ContentBox = ({ theme, title, hideDiv, imgRoute, body, flowContent, children }) => {
     return (

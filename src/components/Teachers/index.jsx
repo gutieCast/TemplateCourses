@@ -1,5 +1,5 @@
 import React from 'react'
-import { ContentBox, SlideNav } from 'components'
+import { ContentBox, SlideNav } from '../../components'
 
 const Teachers = () => {
     return (

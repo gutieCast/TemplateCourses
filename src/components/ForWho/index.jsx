@@ -1,8 +1,8 @@
 import React from 'react'
-import { ContentBox } from 'components/ContentBox'
-import { infoCourse } from 'helpers/data'
-import { imgForWho, bgMethodology, methodology } from 'helpers/images'
-import 'components/ForWho/for-who.scss'
+import { ContentBox } from '../ContentBox'
+import { infoCourse } from '../../helpers/data'
+import { imgForWho, bgMethodology, methodology } from '../../helpers/images'
+import './for-who.scss'
 
 const ForWho = () => {
     const { para_quien } = infoCourse

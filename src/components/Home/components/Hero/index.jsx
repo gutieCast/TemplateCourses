@@ -1,9 +1,9 @@
 import React from 'react'
-import { infoCourse } from 'helpers/data'
-import { imgHero } from 'helpers/images'
-import { Button } from 'components/Button'
-import { SponsorsLogos } from 'components/SponsorsLogos'
-import 'components/Home/components/Hero/hero.scss'
+import { infoCourse } from '../../../../helpers/data'
+import { imgHero } from '../../../../helpers/images'
+import { Button } from '../../../Button'
+import { SponsorsLogos } from '../../../SponsorsLogos'
+import './hero.scss'
 
 const Hero = () => {
     const { nameCourse } = infoCourse
@@ -17,7 +17,9 @@ const Hero = () => {
                         {nameCourse}
                     </h1>
                 </div>
-                <Button classStyle={'logo-box hero'} link="/inscribirse/" anim={'uk-animation-kenburns'} text={'¡Inscríbete!'} />
+                <Button classStyle={'logo-box hero'} link={`${process.env.PUBLIC_URL}/inscribirse`}
+                    //" anim={'uk-animation-kenburns'}
+                    text={'¡Inscríbete!'} />
                 <SponsorsLogos />
             </div>
         </div>

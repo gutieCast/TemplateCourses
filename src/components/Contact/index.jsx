@@ -1,8 +1,8 @@
 import React from 'react'
-import { ContentBox } from 'components/ContentBox'
-import { qrWA } from 'helpers/images'
+import { ContentBox } from '../ContentBox'
+import { qrWA } from '../../helpers/images'
 import { ContactForm } from './components/ContactForm'
-import 'components/Contact/contact.scss'
+import './contact.scss'
 
 const Contact = () => {
     return (
@@ -52,7 +52,7 @@ const Contact = () => {
                     <div className="form-container">
                         <ContactForm />
                     </div>
-                    
+
                 </div>
             </ContentBox>
         </section >

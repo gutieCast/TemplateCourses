@@ -1,6 +1,6 @@
 import React from 'react'
-import { ContentBox } from 'components/ContentBox'
-import { SlideNav } from 'components/SlideNav'
+import { ContentBox } from '../ContentBox'
+import { SlideNav } from '../SlideNav'
 
 const Modules = () => {
     return (

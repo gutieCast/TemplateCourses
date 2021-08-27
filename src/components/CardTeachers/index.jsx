@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 // import { InfoExpanded } from 'components/CardTeachers/component';
-import 'components/CardTeachers/cardTeacher.scss'
+import './cardTeacher.scss'
 
 
 const CardTeacher = ({ id, src, nameTeacher, description }) => {

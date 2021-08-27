@@ -1,27 +1,20 @@
 import React, { useEffect, useState, useRef } from 'react'
-import { ContentBox } from 'components/ContentBox'
-import { qrPay } from 'helpers/images'
-import { Button } from 'components/Button'
-import 'components/Registration/components/InscriptionForm/inscriptionForm.scss'
 import { Redirect } from 'react-router-dom'
+import { ContentBox } from '../../../ContentBox'
+import { Button } from '../../../Button'
+import { qrPay } from '../../../../helpers/images'
+import '../inscription.scss'
 
-export const ProofInput = () => {
+export const ProofInput = ({ setGoFinished }) => {
     const [file, setFile] = useState();
     const [isFilePicked, setIsFilePicked] = useState(false);
-    // const [goPay, setGoPay] = useState(false);
     const fileInput = useRef(null)
-
-
-    useEffect(() => {
-        window.scrollTo(0, 0)
-    }, [])
 
     const onChange = async e => {
         if (e.target.files && e.target.files.length > 0) {
             console.log('selectFile');
             setFile(e.target.files[0])
             setIsFilePicked(true)
-            // setGoPay(true)
         }
     }
     const handleSubmit = (e) => {
@@ -35,7 +28,7 @@ export const ProofInput = () => {
         //     // });
         // };
         console.log('upload ' + file.name);
-        { }
+        setGoFinished(true)
     }
     return <>
         <input
@@ -54,9 +47,11 @@ export const ProofInput = () => {
                     <div className="text-container">
                         <p className="info">
                             Nombre: {file.name}
+                            <br />
                         </p>
                         <p className="info">
                             Al verificar la información, se le enviará un correo electrónico para coordinar los datos de facturación
+                            <br />
                         </p>
                     </div>
                     <Button
@@ -80,11 +75,17 @@ export const ProofInput = () => {
 
 
 const PaymentMeth = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
+    const [goFinished, setGoFinished] = useState(false);
     return (
         <>
-            {/* {
-                goPay && (<Redirect to="/" />)
-            } */}
+            {
+                goFinished && (<Redirect to={`${process.env.PUBLIC_URL}/finalizado`} />)
+            }
             <ContentBox
                 theme={'ligth inscription'}
                 title={'modo de pago'}
@@ -135,7 +136,7 @@ const PaymentMeth = () => {
                     <h4 className="title-input-file">
                         Adjuntar comprobante
                     </h4>
-                    <ProofInput />
+                    <ProofInput setGoFinished={setGoFinished} />
                 </div>
             </ContentBox>
         </>

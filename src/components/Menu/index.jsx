@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavHashLink as NavLink } from 'react-router-hash-link'
-import { menu } from 'helpers/itemsMenu'
-import 'components/Menu/menu.scss'
+import { menu } from '../../helpers/itemsMenu'
+import './menu.scss'
 
 const Menu = ({ styleAnimation, styleName }) => {
     const body = document.querySelector('body');

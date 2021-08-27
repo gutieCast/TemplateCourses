@@ -1,8 +1,8 @@
 import React from 'react'
-import { infoCourse } from 'helpers/data'
-import { ContentBox } from 'components/ContentBox'
-import { iconProfit } from 'helpers/images/'
-import 'components/Profits/profits.scss'
+import { ContentBox } from '../ContentBox'
+import { infoCourse } from '../../helpers/data'
+import { iconProfit } from '../../helpers/images'
+import './profits.scss'
 
 const Profits = () => {
     const { beneficios } = infoCourse

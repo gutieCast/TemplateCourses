@@ -1,5 +1,5 @@
 import React from 'react'
-import { InscriptionForm } from 'components/Registration/components/InscriptionForm'
+import { InscriptionForm } from '../InscriptionForm'
 
 const DefaultForm = () => {
     return (

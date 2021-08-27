@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import ReactModal from 'react-modal'
-import { ContentBox } from 'components/ContentBox'
-import 'components/CardModule/cardModule.scss'
+import { ContentBox } from '../ContentBox'
+import './cardModule.scss'
 
 ReactModal.setAppElement('#root')
 

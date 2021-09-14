@@ -29,11 +29,10 @@ const ForWho = () => {
                     </ContentBox>
             }
             <section id="methodology">
-                <div id="banner-meth" style={{ backgroundImage: `url(${bgMethodology})` }}>
+                <div id="banner-meth" uk-scrollspy="target: > div; cls: uk-animation-fade; delay: 500" className="uk-animation-toggle" tabIndex="0" style={{ backgroundImage: `url(${bgMethodology})` }}>
                     <div className="message-container">
                         <div className="img-methodology" style={{ backgroundImage: `url(${methodology})` }}></div>
                     </div>
-                    {/* <img className="img-methodology" scr={methodology} alt="¡Metodología 100% online!" /> */}
                 </div>
             </section>
         </section>

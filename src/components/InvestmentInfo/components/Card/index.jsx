@@ -8,7 +8,6 @@ const Card = ({ recomended, title, price, label, extraItem, description, linkBut
     const history = useHistory()
 
     const handleButton = (optionSelected) => {
-        console.log('selected: ' + optionSelected);
         sessionStorage.setItem('option', optionSelected)
         history.push(`${process.env.PUBLIC_URL}/inscribirse`)
     }
@@ -27,15 +26,15 @@ const Card = ({ recomended, title, price, label, extraItem, description, linkBut
                 <h3 className={`uk-card-title title-card ${recomended ? 'recomended' : ''}`}>
                     {title}
                 </h3>
-                <spam className={`info-price ${recomended ? 'recomended' : ''}`}>
+                <span className={`info-price ${recomended ? 'recomended' : ''}`}>
                     Bs.
-                    <spam className={`price ${recomended ? 'recomended' : ''}`}>
+                    <span className={`price ${recomended ? 'recomended' : ''}`}>
                         {` ${price}`}
-                    </spam>
-                    <spam className={`per-plan ${recomended ? 'recomended' : ''}`}>
+                    </span>
+                    <span className={`per-plan ${recomended ? 'recomended' : ''}`}>
                         {label}
-                    </spam>
-                </spam>
+                    </span>
+                </span>
                 {
                     extraItem &&
                     <p className="main-info">
@@ -54,7 +53,7 @@ const Card = ({ recomended, title, price, label, extraItem, description, linkBut
                         })
                     }
                 </ul>
-                <Button btn={true} text="¡inscribirse!" classStyle={`${recomended ? 'btn-dark' : 'btn-normal'} `} onClick={() => handleButton({ linkButton })} />
+                <Button btn={true} text="¡inscribirse!" classStyle={`${recomended ? 'btn-dark' : 'btn-normal'} `} onClick={() => handleButton(linkButton)} />
             </div>
         </div>
     )

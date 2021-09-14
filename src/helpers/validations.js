@@ -74,7 +74,7 @@ const validateOrganization = (organization) => {
 
 const validatePaymentModality = (modality) => {
     console.log('pay ' + modality);
-    if (modality === '' || modality === '--Escoje tu paquete--') {
+    if (modality === '' || modality === '-- Escoje tu paquete --') {
         return errors.paymentModality = 'Por favor, escoga un paquete'
     } else {
         return errors.paymentModality = ''

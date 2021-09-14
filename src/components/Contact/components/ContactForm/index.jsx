@@ -9,8 +9,6 @@ const ContactForm = () => {
 
     const { errors, validateName, validateEmail, validatePhone, validateOrganization, validateSubject, validateMessage } = validations
 
-    console.log(errors);
-
     /////////////////////////////////////////////////USE STATES & REGISTRER FUNCTIONS
     const firstRender = useRef(true);
 

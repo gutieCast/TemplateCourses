@@ -1,7 +1,7 @@
 @import '../../styles/mixins.scss';
 @import '../../styles/variables.scss';
 
-.main-menu {
+.main-menu, .menu-header :not(.footer) {
     display: none;
     .menu-button-actived & {
         background-color: $main-color;
@@ -109,19 +109,22 @@
 .main-menu {
     &.menu-header {
         .menu-item {
-            &:last-child {
-                background-color: $supplementary-color;
-                color: $white;
-                border-radius: 5px;
-                max-width: 135px;
-                justify-content: center;
-                .menu-link {
-                    line-height: 40px;
-                }
-                &:hover {
-                    border-color: $supplementary-color;
-                    background-color: $main-color;
-                    color: $supplementary-color;
+            @include breakpoint-4 {
+
+                &:last-child {
+                    background-color: $supplementary-color;
+                    color: $white;
+                    border-radius: 5px;
+                    max-width: 135px;
+                    justify-content: center;
+                    .menu-link {
+                        line-height: 40px;
+                    }
+                    &:hover {
+                        border-color: $supplementary-color;
+                        background-color: $main-color;
+                        color: $supplementary-color;
+                    }
                 }
             }
         }

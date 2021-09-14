@@ -5,6 +5,7 @@
     position: relative;
     width: 100%;
     height: 100%;
+    z-index: 999999;
     .form-registrer {
         width: 80%;
         display: flex;
@@ -19,13 +20,10 @@
                 color: $white;
                 font-family: $title-font;
                 max-width: 100%;
+                padding-left: 15px;
             }
         }
     }
-    // background-color: $main-color;
-    // padding: 30px;
-    // color: white;
-    // font-family: $title-font;
     
     .input-phone {
         #phone {
@@ -92,14 +90,11 @@
         align-items: center;
         justify-content: center;
         width: 80%;
-        @include breakpoint-3 {
-            width: 314px;
-        }
         #QR-Pay {
             align-self: center;
             margin: auto;
             display: block;
-            max-width: 100%;
+            max-width: 314px;
 
         }
         .label-payment {
@@ -159,4 +154,18 @@
             text-align: left;
         }
     }
+}
+
+///////////////////
+
+.logo-container {
+    margin: 40px;
+}
+
+.text-dark {
+    background-color: $main-color;
+    color: $white;
+    font-family: $title-font;
+    max-width: 100%;
+    text-align: center;
 }

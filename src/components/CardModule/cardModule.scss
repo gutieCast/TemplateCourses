@@ -4,32 +4,22 @@
 .card-item-module {
     display: flex;
     flex-flow: row wrap;
-    width: min-content;
+    max-height: 100%;
+    max-width: 300px;
     .card-container-module {
         margin: 10px;
         padding: 0;
-        height: 590px;
-        width: 221px;
-        @include breakpoint-3 {
-            width: 237px;
-        }
-        @include breakpoint-4 {
-            width: 350px;
-        }
-        @include breakpoint-6 {
-            height: 665px;
-        }
         &:hover {
             box-shadow: 0 5px 5px $supplementary-color;
             cursor: pointer;
         }
         .module-card {
             height: 100%;
+            width: 100%;
             .card-img {
                 width: 100%;
             }
             .card-info {
-                height: max-content;
                 position: relative;
                 .label-module {
                     position: absolute;
@@ -56,38 +46,79 @@
             }
         }
     }
+}
     
-    .modal {
-        height: auto; // <-- This sets the height
-        margin-top: 84px;
-        position: absolute;
-        max-height: 100%;
-        overflow-y: auto; // <-- This tells the modal to scrol
-        width: 100%;
-        .title-section-center {
-            color: $white;
-            padding: 0;
-            margin: 0;
-        }
-        .modal-body {
-            background-color: $main-color;
-            padding: 0 30px 100px 30px;
-            ;
-            .modal-button-close {
-                position: absolute;
-                color: $white;
-                right: 10%;
-                top: 4%;
-            }
-            .modal-title {
-                color: $supplementary-color;
-            }
-            .modal-subtitle {
-                color: $supplementary-color;
-            }
-            .modal-text {
-                color: $white;
-            }
-        }
-    }
+//     .modal {
+//         // height: auto; // <-- This sets the height
+//         margin-top: 84px;
+//         position: absolute;
+//         max-height: 100%;
+//         overflow-y: auto; // <-- This tells the modal to scrol
+//         width: 100%;
+//     }
+//     .title-section-center {
+//         color: $white;
+//         padding: 0;
+//         margin: 0;
+//     }
+//     .modal-body {
+//         background-color: $main-color;
+//         padding: 0 30px 100px 30px;
+//     }
+//     .modal-button-close {
+//         position: absolute;
+//         color: $white;
+//         right: 10%;
+//         top: 13%;
+//     }
+// }
+
+
+.ReactModal__Html--open,
+.ReactModal__Body--open {
+  overflow: hidden; /* prevents background page from scrolling when the modal is open */
+}
+
+.ReactModal__Overlay {
+  position: fixed;
+  z-index: 999999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ReactModal__Content {
+    padding: 30px;
+    background: $main-color;
+    width: 50rem;
+    max-width: 100%;
+    max-height: calc(100vh - 2rem);
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.25);
+    overflow-y: auto;
+    position: relative;
+}
+
+.modal-close-btn {
+  cursor: pointer;
+  color: $white;
+  top: 1.5rem;
+  right: 1.5rem;
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+}
+
+.modal-title {
+    color: $supplementary-color;
+}
+.modal-subtitle {
+    color: $supplementary-color;
+}
+.modal-text {
+    color: $white;
 }

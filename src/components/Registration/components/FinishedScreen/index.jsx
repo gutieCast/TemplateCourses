@@ -15,18 +15,19 @@ const FinishedScreen = () => {
             hideDiv={true}
             flowContent={'center'}
         >
-
-            <div className="text-container">
-                <p>
-                    Has finalizado el proceso de ¡Inscripción
-                    <br />
-                    Pronto te escribiremos al correo
-                </p>
+            <div>
+                <div className="text-container">
+                    <p className="text-dark">
+                        Has finalizado el proceso de inscripción
+                        <br />
+                        Pronto te escribiremos al correo
+                    </p>
+                </div>
+                {/* <div className="logo-container">
+                    <img src={logoWhite} alt={`logo ${nameCourse}`} />
+                </div> */}
+                <Button classStyle={"btn-dark"} text={"¡Ok!"} link={`${process.env.PUBLIC_URL}/#acerca-de`} />
             </div>
-            <div className="logo-container">
-                <img src={logoWhite} alt={`logo ${nameCourse}`} />
-            </div>
-            <Button classStyle="dark" text={"¡Ok!"} link={`${process.env.PUBLIC_URL}/`} />
         </ContentBox>
     )
 }

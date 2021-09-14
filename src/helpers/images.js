@@ -1,4 +1,6 @@
 import logoWeb from '../assets/images/logo_web.png'
+import buttonInscription from '../assets/images/icon-consultar.png'
+import balloon from '../assets/images/tips-ins.png'
 
 import heroImg from '../assets/images/banners-backgrounds/hero-img.jpg'
 
@@ -52,7 +54,12 @@ import qrPayment from '../assets/images/qr-payment.jpg'
 
 import whiteLogo from '../assets/images/logo-footer.png'
 
+///////////////////////////////////////////////////////////////////////
+
 export const logo = { img: logoWeb, alt: "Logo RESCAT" }
+
+export const inscriptionButton = buttonInscription
+export const wordBalloon = balloon
 
 export const imgHero = heroImg
 

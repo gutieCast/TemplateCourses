@@ -8,7 +8,7 @@ import './hero.scss'
 const Hero = () => {
     const { nameCourse } = infoCourse
     return (
-        <div id="hero" >
+        <div id="hero">
             <div className="img-hero" style={{ backgroundImage: `url(${imgHero})` }}>
                 <div className="name-container">
                     <h1 className="uk-text-center uk-margin-auto uk-margin-auto-vertical"

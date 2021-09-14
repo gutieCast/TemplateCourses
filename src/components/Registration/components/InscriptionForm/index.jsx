@@ -9,12 +9,10 @@ import '../inscription.scss'
 
 const InscriptionForm = () => {
 
-    /////////////////////////////////////////////////////VALIDATIONS
+    /////////////////////////////////////////////////////VALIDATIONS FROM HELPERS
 
     const { errors, validateName, validateLastname, validateEmail, validatePhone, validateProfession, validateOrganization, validatePaymentModality } = validations
 
-
-    // const selectFromButton = setPaymentModality(sessionStorage.getItem('option'))
 
     /////////////////////////////////////////////////USE STATES & REGISTRER FUNCTIONS
 
@@ -26,11 +24,9 @@ const InscriptionForm = () => {
     const [phone, setPhone] = useState('')
     const [profession, setProfession] = useState('');
     const [organization, setOrganization] = useState('');
-    const [paymentModality, setPaymentModality] = useState(sessionStorage.getItem('option'))
+    const [paymentModality, setPaymentModality] = useState(sessionStorage.getItem("option"))
     const [isDisabled, setIsDisabled] = useState(true)
     const [goPay, setGoPay] = useState(false);
-
-    // const { optionSelected } = useParams();
 
     const options = [
         { value: 'sistema-modular', title: '1 módulo (Bs. 500)' },
@@ -61,7 +57,6 @@ const InscriptionForm = () => {
     }
 
     useEffect(() => {
-        console.log('toUp!');
         window.scrollTo(0, 0)
     }, [])
 
@@ -138,11 +133,11 @@ const InscriptionForm = () => {
                             <div className="uk-margin">
                                 <select className="payment-modality" name="payment-modality" id="payment-modality" value={paymentModality} onChange={(e) => setPaymentModality(e.target.value)} onBlur={(e) => validatePaymentModality(e.target.value)}
                                 >
+                                    <option value=""> -- Escoje tu paquete -- </option>
                                     {
                                         options.map(option => {
-                                            console.log('print key ' + paymentModality);
                                             return (
-                                                <option selected={paymentModality === option.value ? 'true' : ''}>
+                                                <option value={option.value} selected={paymentModality === option.value ? 'true' : ''}>
                                                     {option.title}
                                                 </option>
                                             )

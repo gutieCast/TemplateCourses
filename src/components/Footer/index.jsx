@@ -10,7 +10,7 @@ const Footer = () => {
             <div className="logo-container-footer" style={{ backgroundColor: '#7070707' }}>
                 <img src={logoWhite} alt="RESCAT logo" />
             </div>
-            <Menu styleName="menu-footer" styleAnimation={"uk-animation-scale-down"} />
+            <Menu styleName={"menu-footer"} styleAnimation={"uk-animation-scale-down"} />
             <div className="contact-info-footer">
                 <div className="WA-container">
                     <a href="https://wa.me/message/DBMZAWA4V27CA1"

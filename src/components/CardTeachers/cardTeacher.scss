@@ -1,32 +1,29 @@
 @import "../../styles/variables.scss";
 @import "../../styles/mixins.scss";
 
-.card-container-teacher {
-    margin: 10px;
-    padding: 0;
-    height: min-content;
-    width: 221px;
-    @include breakpoint-3 {
-        width: 237px;
-    }
-    @include breakpoint-4 {
-        width: 350px;
-    }
-    &:hover {
-        box-shadow: 0 5px 5px $supplementary-color;
-        cursor: pointer;
-    }
-    .teacher-card {
-        display: flex;
-        position: relative;
-        // flex-wrap: row wrap;       
-        .card-img {
-            width: 100%;
-            height: 100%;
+.card-item-teacher {
+    display: flex;
+    flex-flow: row wrap;
+    max-height: 100%;
+    max-width: 300px;
+    .card-container-teacher {
+        padding: 0;
+        height: min-content;
+        &:hover {
+            box-shadow: 0 5px 5px $supplementary-color;
+            cursor: pointer;
+        }
+        .teacher-card {
+            display: flex;
+            position: relative;     
+            .card-img {
+                width: 100%;
+                height: 100%;
+            }
             .info-module-spread-out {
-                display: none;
                 position: absolute; 
                 &.hide { 
+                    display: none;
                     opacity: 0;
                     height: 0; 
                     transform: translateY(-50px);
@@ -35,6 +32,7 @@
                 &.shown {
                     top: 0%;
                     display: flex;
+                    flex-direction: column;
                     background-color: transparentize($main-color, .1);
                     padding: 10px 5px;
                     opacity: 1;
@@ -47,16 +45,16 @@
                 .title-spread-out {
                     color: $supplementary-color;
                     font-family: $title-font;
-                    font-size: $xs;
+                    font-size: $s;
                     font-weight: bolder;
                     margin: 17px auto;
                 }
                 .text-spread-out {
                     color: $white;
                     font-family: $main-font;
-                    font-size: $xs;
+                    font-size: 13px;
                     margin: auto;
-                    padding: 30px;
+                    padding: 25px;
                 }
             }
         }

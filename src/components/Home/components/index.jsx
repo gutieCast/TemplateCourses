@@ -1,1 +1,2 @@
-export { Hero } from 'components/Home/components/Hero'
+export { Hero } from './Hero'
+export { ButtonFixed } from './ButtonFixed'

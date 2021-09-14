@@ -21,10 +21,6 @@ const Menu = ({ styleAnimation, styleName }) => {
                     >
                         <NavLink
                             className="menu-link"
-                            // { window.innerWidth > 768
-                            //     ? uk-scrollspy={`cls: ${styleAnimation}; repeat: true`}
-                            //     : ''
-                            // }
                             to={`/${hash}`}
                             scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })}
                             to={link}

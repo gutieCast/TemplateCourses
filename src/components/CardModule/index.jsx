@@ -34,7 +34,7 @@ const CardModule = ({ id, src, titleImg, item, title, teacher, date, content }) 
                 isOpen={modalIsOpen}
                 shouldCloseOnOverlayClick={true}
                 onRequestClose={() => setModalIsOpen(false)}
-            // preventScroll={true}
+                preventScroll={false}
             >
                 <ContentBox
                     theme={'dark'}
@@ -42,7 +42,7 @@ const CardModule = ({ id, src, titleImg, item, title, teacher, date, content }) 
                     hideDiv={true}
                 >
                     <div className="modal-body">
-                        <button uk-icon="icon: close; ratio: 2" className="uk-modal-close modal-button-close" onClick={() => setModalIsOpen(false)}></button>
+                        <button uk-icon="icon: close; ratio: 2" className="uk-modal-close modal-close-btn" onClick={() => setModalIsOpen(false)}></button>
                         <p className="modal-text">{`Fecha: ${date}`}</p>
                         <div className="content-modal">
                             <h4 className="modal-subtitle">Temas:</h4>

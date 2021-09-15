@@ -23,7 +23,10 @@
                 align-self: center;
                 margin: auto;
                 display: block;
-                max-width: 314px;
+                max-width: 100%;
+                @include breakpoint-2 {
+                    max-width: 314px;
+                }
     
             }
             .label-payment {

@@ -4,6 +4,7 @@
 #registrer-form, #payment-method, #finished-page {
     position: relative;
     height: 100%;
+    padding-top: 30px;
     .label-section {
         position: absolute;
         top: 3%;
@@ -23,6 +24,9 @@
             margin: auto;
         }
     }
+}
+#registrer-form, #finished-page {
+    background-color: $main-color;
 }
     .form-registrer {
         width: 80%;

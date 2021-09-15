@@ -1,0 +1,87 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+#payment-method {
+    .payment-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0;
+        width: 100%;
+        @include breakpoint-3 {
+            padding: 0 70px;
+            flex-direction: row;
+        }
+        .qr-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 80%;
+            #QR-Pay {
+                align-self: center;
+                margin: auto;
+                display: block;
+                max-width: 314px;
+    
+            }
+            .label-payment {
+                margin: auto;
+                text-align: center;
+            }
+        }
+        .info-container {
+            margin: 30px 0;
+            align-items: baseline;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 80%;
+            @include breakpoint-3 {
+                padding-left: 30px;
+                width: 50%;
+            }
+            @include breakpoint-4 {
+                padding: 50px;
+            }
+            div {
+                margin: 15px 0
+            }
+            .info {
+                color: $info-color;
+                font-family: $main-font;
+                font-size: 20px;
+                margin-top: 10px;
+                &:last-child {
+                    margin-top: 0;
+                }
+            }
+            .main-info {
+                color: $main-color;
+                font-family: $main-font;
+                font-size: 20px;
+                font-weight: bolder;
+                margin: 0;
+            }
+        }
+    }
+    .receipt-input-file {
+        margin: 50px 0;
+        display: flex;
+        width: 80%;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        .title-input-file {
+            font-family: $main-font;
+            font-weight: bolder;
+            text-transform: uppercase;
+            color: $info-color;
+            text-align: center;
+            @include breakpoint-4 {
+                text-align: left;
+            }
+        }
+    }
+}

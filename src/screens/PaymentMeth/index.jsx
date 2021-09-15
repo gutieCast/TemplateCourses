@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { Redirect } from 'react-router-dom'
-import { ContentBox } from '../../../ContentBox'
-import { Button } from '../../../Button'
-import { qrPay } from '../../../../helpers/images'
-import '../inscription.scss'
+import { ContentBox } from '../../components/ContentBox'
+import { Button } from '../../components/Button'
+import { qrPay } from '../../helpers/images'
+import './paymentMeth.scss'
 
 export const ProofInput = ({ setGoFinished }) => {
     const [file, setFile] = useState();
@@ -82,7 +82,7 @@ const PaymentMeth = () => {
 
     const [goFinished, setGoFinished] = useState(false);
     return (
-        <>
+        <section id="payment-method">
             {
                 goFinished && (<Redirect to={`${process.env.PUBLIC_URL}/finalizado`} />)
             }
@@ -139,7 +139,7 @@ const PaymentMeth = () => {
                     <ProofInput setGoFinished={setGoFinished} />
                 </div>
             </ContentBox>
-        </>
+        </section>
     )
 }
 

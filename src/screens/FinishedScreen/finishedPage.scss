@@ -1,0 +1,15 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+
+.logo-container {
+    margin: 40px;
+}
+
+.text-dark {
+    background-color: $main-color;
+    color: $white;
+    font-family: $title-font;
+    max-width: 100%;
+    text-align: center;
+}

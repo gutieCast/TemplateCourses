@@ -1,8 +1,8 @@
 import React from 'react'
-import { infoCourse } from '../../../../helpers/data'
-import { imgHero } from '../../../../helpers/images'
-import { Button } from '../../../Button'
-import { SponsorsLogos } from '../../../SponsorsLogos'
+import { infoCourse } from '../../helpers/data'
+import { imgHero } from '../../helpers/images'
+import { Button } from '../Button'
+import { SponsorsLogos } from '../SponsorsLogos'
 import './hero.scss'
 
 const Hero = () => {
@@ -18,7 +18,6 @@ const Hero = () => {
                     </h1>
                 </div>
                 <Button classStyle={'logo-box hero'} link={`${process.env.PUBLIC_URL}/inscribirse`}
-                    //" anim={'uk-animation-kenburns'}
                     text={'¡Inscríbete!'} />
                 <SponsorsLogos />
             </div>

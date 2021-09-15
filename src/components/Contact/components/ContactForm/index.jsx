@@ -47,28 +47,24 @@ const ContactForm = () => {
             firstRender.current = false
             return
         }
-        setIsDisabled(pendingErrors(errors))
+        setIsDisabled(isErrors(errors))
     }, [name, email, phone, organization, subject, message]);
 
-    const pendingErrors = (errors) => {
-        if (
-            (name === '' || email === '' || phone === '' || organization === '' || subject === '' || message === '')
-        ) {
+    const isErrors = (errors) => {
+        console.log(errors);
+        if (name === '' || email === '' || phone === '' || organization === '' || subject === '' || message === '') {
+            console.log('no cambiado todo');
             return true
-        } else {
-            validateName(name);
-            validateEmail(email);
-            validatePhone(phone);
-            validateSubject(subject);
-            validateMessage(message);
+        } else if (name && email && phone && organization && subject && message) {
             for (let key in errors) {
                 if (errors[key] !== null && errors[key] !== "") {
+                    console.log(Object.keys(errors) !== '');
                     return true
-                } else {
-                    // errors = {}
-                    return false
                 }
             }
+        } else {
+            errors = {}
+            return false
         }
     };
 

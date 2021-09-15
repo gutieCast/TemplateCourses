@@ -40,7 +40,7 @@ const InvestmentInfo = () => {
                 </ul>
                 <div className="banner-container-inscription" style={{ backgroundImage: `url(${bannerInscription})` }}>
                     <h2 className="banner-text"> ¡inscríbete ahora! </h2>
-                    <Button classStyle={'btn-dark'} link="/inscribirse/" anim={'uk-animation-kenburns'} text={'¡Inscríbete!'} />
+                    <Button classStyle={'btn-dark'} link={`${process.env.PUBLIC_URL}/inscribirse`} anim={'uk-animation-kenburns'} text={'¡Inscríbete!'} />
                 </div>
 
             </ContentBox>

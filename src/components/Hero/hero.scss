@@ -1,7 +1,8 @@
-@import '../../../../styles/mixins.scss';
-@import '../../../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
 
 #hero {
+    margin-top: 85px;
     align-items: center;
     height: 100vh;
     display: flex;

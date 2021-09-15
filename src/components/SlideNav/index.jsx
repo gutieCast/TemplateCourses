@@ -28,7 +28,9 @@ const SlideNav = ({ modules, teachers }) => {
     return (
         <div uk-slider="autoplay: true; autoplay-interval: 2500; pause-on-hover: true; center: true" className="uk-position-relative uk-visible-toggle uk-light slider" tabIndex="-1" >
             <div className="uk-position-relative position-slider">
-                <div className="uk-slider-container uk-grid slider-container">
+                <div className="uk-slider-container uk-grid slider-container"
+                    uk-parallax="y: 100, 0; target:  viewport: 0.5"
+                >
                     <ul className="uk-slider-items uk-child-width-expand-1-2@s uk-child-width-1-3@m uk-child-width-1-4@l cards-container">
                         {
                             modules &&

@@ -7,6 +7,7 @@ import { Main } from '../../components/Main'
 import { Footer } from '../../components/Footer'
 
 const Home = () => {
+    sessionStorage.removeItem('option');
     return (
         <>
             <Header />

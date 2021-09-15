@@ -31,7 +31,7 @@ const ForWho = () => {
             <section id="methodology">
                 <div id="banner-meth" className="uk-animation-toggle" tabIndex="0" style={{ backgroundImage: `url(${bgMethodology})` }}>
                     <div className="message-container"
-                        uk-parallax="opacity: 0,1; y: -250, 0; viewport: 0.5"
+                        uk-parallax="opacity: 0,1; y: -100, 0; viewport: 0.5"
                     >
                         <div className="img-methodology" style={{ backgroundImage: `url(${methodology})` }}></div>
                     </div>

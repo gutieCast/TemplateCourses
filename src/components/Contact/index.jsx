@@ -1,7 +1,7 @@
 import React from 'react'
 import { ContentBox } from '../ContentBox'
 import { qrWA } from '../../helpers/images'
-import { ContactForm } from './components/ContactForm'
+import { Form } from '../Form'
 import './contact.scss'
 
 const Contact = () => {
@@ -50,7 +50,7 @@ const Contact = () => {
                     </div>
 
                     <div className="form-container">
-                        <ContactForm />
+                        <Form signIn={false} />
                     </div>
 
                 </div>

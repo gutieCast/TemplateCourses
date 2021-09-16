@@ -1,4 +1,5 @@
 export { Button } from './Button'
+export { Form } from './Form'
 export { Main } from './Main'
 export { Hero } from './Hero'
 export { ContentBox } from './ContentBox'

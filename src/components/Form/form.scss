@@ -1,0 +1,67 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+.sign-form {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 50px;
+    .fieldset {
+        width: 70%;
+        input {
+            background-color: $main-color;
+            color: $white;
+            font-family: $title-font;
+        }
+        .input-phone {
+            background-color: $main-color;
+            color: $white;
+            font-family: $title-font;
+            max-width: 100%;
+            padding-left: 15px;
+            &:focus-visible {
+                border: none;
+            }
+        }
+    }
+}
+
+.input-phone {
+    #phone {
+        border-color: transparent;
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}
+
+#payment-modality {
+    background-color: $main-color;
+    font-family: $title-font;
+    font-size: 15px;
+    height: 40px;
+    color: $ligth-gray;
+    width: 100%;
+    &:hover {
+        background-color: $main-color;
+        color:$white;
+    }
+}
+
+span {
+    color: $complementary-color;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 60%;
+    .fieldset {
+        width: 100%;
+    }
+}

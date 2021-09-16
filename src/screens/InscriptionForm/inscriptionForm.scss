@@ -1,7 +1,7 @@
 @import '../../styles/mixins.scss';
 @import '../../styles/variables.scss';
 
-#registrer-form, #payment-method, #finished-page {
+#register, #payment-method, #finished-page {
     position: relative;
     height: 100%;
     padding-top: 30px;
@@ -16,74 +16,12 @@
         }
     }
     .text-container {
-        width: 70%;
-        display: block;
-        align-self: center;
-        padding-bottom: 30px;
-        p {
-            margin: auto;
-        }
-    }
-}
-#registrer-form, #finished-page {
-    background-color: $main-color;
-}
-    .form-registrer {
-        width: 80%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        padding-bottom: 50px;
-        .fieldset {
-            width: 70%;
-            input {
-                background-color: $main-color;
-                color: $white;
-                font-family: $title-font;
-            }
-            .input-phone {
-                background-color: $main-color;
-                color: $white;
-                font-family: $title-font;
-                max-width: 100%;
-                padding-left: 15px;
-                &:focus-visible {
-                    border: none;
-                }
-            }
-        }
-    }
-    
-    .input-phone {
-        #phone {
-            border-color: transparent;
-            &:focus {
-                box-shadow: none;
-            }
-        }
-    }
-    
-    #payment-modality {
-        background-color: $main-color;
-        font-family: $title-font;
-        font-size: 15px;
-        height: 40px;
-        color: $ligth-gray;
-        width: 100%;
-        &:hover {
-            background-color: $main-color;
-            color:$white;
-        }
-    }
-
-    .headline {
         width: 80%;
         @include breakpoint-3 {
             max-width: 500px;
         }
     }
-
-    span {
-        color: $complementary-color;
-    }
+}
+#register, #finished-page {
+    background-color: $main-color;
+}

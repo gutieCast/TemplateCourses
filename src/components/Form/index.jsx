@@ -12,22 +12,18 @@ const Form = ({ signIn }) => {
     const { errors, validateName, validateLastname, validateEmail, validatePhone, validateProfession, validateOrganization, validatePaymentModality, validateSubject, validateMessage } = validations
 
     const firstRender = useRef(true);
-
-    /////////////////////////////////////////////////USE HOOKS & REGISTRER FUNCTIONS
-
-
     const [name, setName] = useState('');
-    const [lastname, setLastname] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('')
-    const [profession, setProfession] = useState('');
     const [organization, setOrganization] = useState('');
-    const [paymentModality, setPaymentModality] = useState(sessionStorage.getItem("option"))
     const [isDisabled, setIsDisabled] = useState(true)
+
+    /////////////////////////////////////////////////USE HOOKS & SIGN IN FUNCTIONS
+
+    const [lastname, setLastname] = useState('');
+    const [profession, setProfession] = useState('');
+    const [paymentModality, setPaymentModality] = useState(sessionStorage.getItem("option"))
     const [goPay, setGoPay] = useState(false);
-
-
-
 
     const options = [
         { value: 'sistema-modular', title: '1 módulo (Bs. 500)' },
@@ -35,26 +31,36 @@ const Form = ({ signIn }) => {
         { value: 'diplomado-completo', title: '12 módulos (Bs. 3500)' }
     ];
 
+    const data = { name, lastname, email, phone, profession, organization, paymentModality };
+
+    const sendDataInscription = async (data) => {
+        fetch("/preregistro.php", {
+            method: "POST",
+            headers: { 'Content-Type': 'text/plain' },
+            body: data
+        }).then(() => {
+
+        })
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        // const sendRegistrer = (name, lastname, email, phone, profession, organization, paymentModality) => {
-        //     // async + arg
-        //     // await api({
-        //     //     method: "post",
-        //     //     url: "/prerregistres.json",
-        //     //     data: registrer,
-        //     // });
-        // };
-        console.log('registred: ', name, lastname, email, phone, profession, organization, paymentModality);
-        setName('');
-        setLastname('');
-        setEmail('');
-        setPhone('');
-        setProfession('');
-        setOrganization('');
-        setPaymentModality('');
-        firstRender.current = true
-        setGoPay(true)
+        for (let key in errors) {
+            if (errors[key] !== null && errors[key] !== "") {
+                sendDataInscription(data)
+                setName('');
+                setLastname('');
+                setEmail('');
+                setPhone('');
+                setProfession('');
+                setOrganization('');
+                setPaymentModality('');
+                firstRender.current = true
+                setGoPay(true)
+            } else {
+                setIsDisabled(true)
+            }
+        }
     }
 
     useEffect(() => {
@@ -72,7 +78,6 @@ const Form = ({ signIn }) => {
     const isErrors = (errors) => {
         console.log(errors);
         if (name === '' || lastname === '' || email === '' || phone === '' || organization === '' || profession === '' || paymentModality === null || paymentModality === '-- Escoje tu paquete --') {
-            console.log('no cambiado todo');
             return true
         } else if (name && lastname && email && phone && organization && profession && paymentModality) {
             for (let key in errors) {

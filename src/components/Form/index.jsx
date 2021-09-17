@@ -33,34 +33,33 @@ const Form = ({ signIn }) => {
 
     const data = { name, lastname, email, phone, profession, organization, paymentModality };
 
-    const sendDataInscription = async (data) => {
+    const sendDataInscription = (data) => {
         fetch("/preregistro.php", {
             method: "POST",
-            headers: { 'Content-Type': 'text/plain' },
-            body: data
-        }).then(() => {
-
-        })
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        }).then(res => res.json())
+            .catch(error => console.error('Error:', error))
+            .then(response => console.log('Success:', response));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmitSignIn = (e) => {
         e.preventDefault();
-        for (let key in errors) {
-            if (errors[key] !== null && errors[key] !== "") {
-                sendDataInscription(data)
-                setName('');
-                setLastname('');
-                setEmail('');
-                setPhone('');
-                setProfession('');
-                setOrganization('');
-                setPaymentModality('');
-                firstRender.current = true
-                setGoPay(true)
-            } else {
-                setIsDisabled(true)
-            }
-        }
+        sendDataInscription(data)
+        setName('');
+        setLastname('');
+        setEmail('');
+        setPhone('');
+        setProfession('');
+        setOrganization('');
+        setPaymentModality('');
+        firstRender.current = true
+        setGoPay(true)
+    }
+
+    const handleInput = (e, validate, set) => {
+        validate(e.target.value);
+        set(e.target.value);
     }
 
     useEffect(() => {
@@ -72,22 +71,23 @@ const Form = ({ signIn }) => {
             firstRender.current = false
             return
         }
-        setIsDisabled(isErrors(errors))
+        if (name !== '' && lastname !== '' && email !== '' && phone !== '' && organization !== '' && profession !== '' && (paymentModality !== null && paymentModality !== '-- Escoje tu paquete --')) {
+            setIsDisabled(AreErrors(errors))
+        }
     }, [name, lastname, email, phone, profession, organization, paymentModality]);
 
-    const isErrors = (errors) => {
-        console.log(errors);
-        if (name === '' || lastname === '' || email === '' || phone === '' || organization === '' || profession === '' || paymentModality === null || paymentModality === '-- Escoje tu paquete --') {
-            return true
-        } else if (name && lastname && email && phone && organization && profession && paymentModality) {
-            for (let key in errors) {
-                if (errors[key] !== null && errors[key] !== "") {
-                    console.log(Object.keys(errors) !== '');
-                    return true
-                }
+    const AreErrors = (errors) => {
+        let count = 0;
+        const valuesErrors = Object.values(errors)
+        for (let value of valuesErrors) {
+            if (value !== "") {
+                console.log('error: ' + value);
+                count += 1
             }
+        }
+        if (count > 0) {
+            return true
         } else {
-            errors = {}
             return false
         }
     };
@@ -97,74 +97,61 @@ const Form = ({ signIn }) => {
     const [subject, setSubject] = useState('');
     const [message, setMessage] = useState('');
 
+    const msg = { name, email, phone, organization, subject, message };
+
+    const sendMessage = (msg) => {
+        fetch("/preregistro.php", {
+            method: "POST",
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(msg)
+        }).then(res => res.json())
+            .catch(error => console.error('Error:', error))
+            .then(response => console.log('Success:', response));
+    };
+
     const handleSubmitContact = (e) => {
         e.preventDefault();
-        // const sendMessage = (name, email, phone, organization, subject, message) => {
-        //     // async + arg
-        //     // await api({
-        //     //     method: "post",
-        //     //     url: "/message[??].json",
-        //     //     data: message[??],
-        //     // });
-        // };
-        console.log('post: ', name, email, phone, organization, subject, message);
+        sendMessage(msg)
+        setIsDisabled(true);
         setName('');
         setEmail('');
         setPhone('');
         setOrganization('');
         setSubject('');
         setMessage('');
-        setIsDisabled(true);
         firstRender.current = true
     }
-
 
     useEffect(() => {
         if (firstRender.current) {
             firstRender.current = false
             return
         }
-        setIsDisabled(isErrorsContact(errors))
-    }, [name, email, phone, organization, subject, message]);
-
-    const isErrorsContact = (errors) => {
-        console.log(errors);
-        if (name === '' || email === '' || phone === '' || organization === '' || subject === '' || message === '') {
-            console.log('no cambiado todo');
-            return true
-        } else if (name && email && phone && organization && subject && message) {
-            for (let key in errors) {
-                if (errors[key] !== null && errors[key] !== "") {
-                    console.log(Object.keys(errors) !== '');
-                    return true
-                }
-            }
-        } else {
-            errors = {}
-            return false
+        if (name !== '' && email !== '' && phone !== '' && organization !== '' && subject !== '' && message !== '') {
+            setIsDisabled(AreErrors(errors))
         }
-    };
+    }, [name, email, phone, organization, subject, message]);
 
     return (
         <>
             {goPay && (<Redirect to={`${process.env.PUBLIC_URL}/modo-de-pago`} />)}
-            <form className={signIn ? 'sign-form' : 'contact-form'} onSubmit={handleSubmit}>
+            <form className={signIn ? 'sign-form' : 'contact-form'} onSubmit={signIn ? handleSubmitSignIn : handleSubmitContact}>
                 <fieldset className="uk-fieldset fieldset" >
                     {
                         signIn &&
                         <>
                             <div className="uk-margin">
-                                <input className="uk-input" name="name" id="name" type="text" placeholder="*Nombre" value={name} onChange={(e) => setName(e.target.value)} onBlur={(e) => validateName(e.target.value)} />
+                                <input className="uk-input" name="name" id="name" type="text" placeholder="*Nombre" value={name} onChange={(e) => handleInput(e, validateName, setName)} />
                                 {errors.name !== '' ? <span>{errors.name}</span> : ''}
                             </div>
 
                             <div className="uk-margin">
-                                <input className="uk-input" name="lastname" id="lastname" type="text" placeholder="*Apellido" value={lastname} onChange={(e) => setLastname(e.target.value)} onBlur={(e) => validateLastname(e.target.value)} />
+                                <input className="uk-input" name="lastname" id="lastname" type="text" placeholder="*Apellido" value={lastname} onChange={(e) => handleInput(e, validateLastname, setLastname)} />
                                 {errors.lastname !== '' ? <span>{errors.lastname}</span> : ''}
                             </div>
 
                             <div className="uk-margin">
-                                <input className="uk-input" name="email" id="email" type="email" placeholder="*Correo Electrónico" value={email} onChange={(e) => setEmail(e.target.value)} onBlur={(e) => validateEmail(e.target.value)} />
+                                <input className="uk-input" name="email" id="email" type="email" placeholder="*Correo Electrónico" value={email} onChange={(e) => handleInput(e, validateEmail, setEmail)} />
                                 {errors.email !== '' ? <span>{errors.email}</span> : ''}
                             </div>
 
@@ -174,23 +161,24 @@ const Form = ({ signIn }) => {
                             </div>
 
                             <div className="uk-margin">
-                                <input className="uk-input" name="profession" id="profession" type="text" placeholder="*Profesión" value={profession} onChange={(e) => setProfession(e.target.value)} onBlur={(e) => validateProfession(e.target.value)} />
+                                <input className="uk-input" name="profession" id="profession" type="text" placeholder="*Profesión" value={profession} onChange={(e) => handleInput(e, validateProfession, setProfession)} />
                                 {errors.profession !== '' ? <span>{errors.profession}</span> : ''}
                             </div>
 
                             <div className="uk-margin">
-                                <input className="uk-input" name="organization" id="organization" type="text" placeholder="*Empresa" value={organization} onChange={(e) => setOrganization(e.target.value)} onBlur={(e) => validateOrganization(e.target.value)} />
+                                <input className="uk-input" name="organization" id="organization" type="text" placeholder="*Empresa" value={organization} onChange={(e) => handleInput(e, validateOrganization, setOrganization)} />
                                 {errors.organization !== '' ? <span>{errors.organization}</span> : ''}
                             </div>
 
                             <div className="uk-margin">
-                                <select className="payment-modality" name="payment-modality" id="payment-modality" value={paymentModality} onChange={(e) => setPaymentModality(e.target.value)} onBlur={(e) => validatePaymentModality(e.target.value)}
+                                <select className="payment-modality" name="payment-modality" id="payment-modality" value={paymentModality} onChange={(e) => setPaymentModality(e.target.value)} onBlur={() => validatePaymentModality}
                                 >
                                     <option defaultValue=""> -- Escoje tu paquete -- </option>
                                     {
                                         options.map(option => {
                                             return (
-                                                <option value={option.value} selected={paymentModality === option.value ? 'true' : ''}>
+                                                <option value={option.value} selected={paymentModality === option.value ? 'true' : ''}
+                                                >
                                                     {option.title}
                                                 </option>
                                             )
@@ -204,12 +192,12 @@ const Form = ({ signIn }) => {
                         !signIn &&
                         <>
                             <div className="uk-margin">
-                                <input className="uk-input" name="name" id="name" type="text" placeholder="*Nombre Completo" value={name} onChange={(e) => setName(e.target.value)} onBlur={(e) => validateName(e.target.value)} />
+                                <input className="uk-input" name="name" id="name" type="text" placeholder="*Nombre Completo" value={name} onChange={(e) => handleInput(e, validateName, setName)} />
                                 {errors.name !== '' ? <span>{errors.name}</span> : ''}
                             </div>
 
                             <div className="uk-margin">
-                                <input className="uk-input" name="email" id="email" type="email" placeholder="*Correo Electrónico" value={email} onChange={(e) => setEmail(e.target.value)} onBlur={(e) => validateEmail(e.target.value)} />
+                                <input className="uk-input" name="email" id="email" type="email" placeholder="*Correo Electrónico" value={email} onChange={(e) => handleInput(e, validateEmail, setEmail)} />
                                 {errors.email !== '' ? <span>{errors.email}</span> : ''}
                             </div>
 
@@ -219,17 +207,17 @@ const Form = ({ signIn }) => {
                             </div>
 
                             <div className="uk-margin">
-                                <input className="uk-input" name="organization" id="organization" type="text" placeholder="*Empresa" value={organization} onChange={(e) => setOrganization(e.target.value)} onBlur={(e) => validateOrganization(e.target.value)} />
+                                <input className="uk-input" name="organization" id="organization" type="text" placeholder="*Empresa" value={organization} onChange={(e) => handleInput(e, validateOrganization, setOrganization)} />
                                 {errors.organization !== '' ? <span>{errors.organization}</span> : ''}
                             </div>
 
                             <div className="uk-margin">
-                                <input className="uk-input" name="subject" id="subject" type="text" placeholder="*Asunto" value={subject} onChange={(e) => setSubject(e.target.value)} onBlur={(e) => validateSubject(e.target.value)} />
+                                <input className="uk-input" name="subject" id="subject" type="text" placeholder="*Asunto" value={subject} onChange={(e) => handleInput(e, validateSubject, setSubject)} onBlur={(e) => validateSubject(e.target.value)} />
                                 {errors.subject !== '' ? <span>{errors.subject}</span> : ''}
                             </div>
 
                             <div className="uk-margin">
-                                <textarea className="uk-textarea" rows="5" name="message" id="message" placeholder="Mensaje" value={message} onChange={(e) => setMessage(e.target.value)} onBlur={(e) => validateMessage(e.target.value)}>
+                                <textarea className="uk-textarea" rows="5" name="message" id="message" placeholder="Mensaje" value={message} onChange={(e) => handleInput(e, validateMessage, setMessage)} >
                                 </textarea>
                                 {errors.message !== '' ? <span>{errors.message}</span> : ''}
                             </div>
@@ -238,7 +226,7 @@ const Form = ({ signIn }) => {
                 </fieldset>
                 {
                     signIn
-                        ? <Button btn={true} classStyle={'btn-dark'} text={'enviar'} disabled={isDisabled ? 'disabled' : ''} onClick={(e) => handleSubmit(e)} />
+                        ? <Button btn={true} classStyle={'btn-dark'} text={'enviar'} disabled={isDisabled ? 'disabled' : ''} onClick={(e) => handleSubmitSignIn(e)} />
                         : <Button btn={true} classStyle={'btn-normal'} text={'enviar'} disabled={isDisabled ? 'disabled' : ''} onClick={(e) => handleSubmitContact(e)} />
                 }
             </form >

@@ -17,16 +17,20 @@ export const ProofInput = ({ setGoFinished }) => {
             setIsFilePicked(true)
         }
     }
+
+    const sendFile = (file) => {
+        fetch("/comprobante-de-pago.php", {
+            method: "POST",
+            headers: { 'Content-Type': 'application/json' },
+            body: file
+        }).then(res => res.json())
+            .catch(error => console.error('Error:', error))
+            .then(response => console.log('Success:', response));
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        // const sendFile = file => {
-        //     // async + arg
-        //     // await api({
-        //     //     method: "post",
-        //     //     url: "/registred.json",
-        //     //     data: registrer,
-        //     // });
-        // };
+        sendFile(file)
         console.log('upload ' + file.name);
         setGoFinished(true)
     }

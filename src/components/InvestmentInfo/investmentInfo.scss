@@ -2,7 +2,6 @@
 @import "../../styles/mixins.scss";
 
 #inversion {
-    padding-bottom: 90px;
     .title-section-center {
         padding-bottom: 0;
         margin-bottom: 0;
@@ -10,16 +9,16 @@
     .cards-grid {
         border-color: transparent;
         max-width: 1300px;
-        padding: 0 30px;
+        padding: 0;
+        .card-item {
+            padding-top: 15px;
+        }
         @include breakpoint-3 {
-            padding: 30px;
             align-items: center;
             justify-items: center;
             box-sizing: content-box;
             display: grid;
             grid-gap: 7px;
-            // grid-template-rows: 100vw;
-            // grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
             grid-template-columns: repeat(3, 1fr);
         }
         @include breakpoint-4 {
@@ -29,14 +28,14 @@
     }
 
     .banner-container-inscription {
-        width: 100%;
+        width: 100vw;
         background-repeat: no-repeat;
         background-attachment: inherit;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        height: 400px;
+        height: 500px;
         .banner-text {
             color: $white;
             font-family: $title-font;

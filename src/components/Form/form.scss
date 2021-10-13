@@ -2,37 +2,44 @@
 @import '../../styles/variables.scss';
 
 .sign-form {
-    width: 80%;
-    display: flex;
     align-items: center;
-    justify-content: center;
+    display: flex;
     flex-direction: column;
-    padding-bottom: 50px;
+    margin: auto;
+    width: 80%;
     .fieldset {
-        width: 70%;
-        input {
+        width: 100%;
+        .flag-dropdown {
             background-color: $main-color;
             color: $white;
             font-family: $title-font;
-        }
-        .input-phone {
-            background-color: $main-color;
-            color: $white;
-            font-family: $title-font;
-            max-width: 100%;
-            padding-left: 15px;
-            &:focus-visible {
-                border: none;
+            .selected-flag:hover, .selected-flag:active, .selected-flag:focus {
+                background-color: $main-color;
+                color: $main-color;
+            }
+            .country {
+                &:hover, &:active, &:focus, &:visited, &.highlight {
+                    background-color: $main-color;
+                    color: $main-color;
+                }
+            }
+            .country-list {
+                background-color: $info-color;
+            }
+            .country-name {
+                color: $white;
+                &:hover {
+                    color: $main-color;
+                }    
             }
         }
-    }
-}
-
-.input-phone {
-    #phone {
-        border-color: transparent;
-        &:focus {
-            box-shadow: none;
+        .uk-input, .payment-modality {
+            background-color: $main-color;
+            color: $white;
+            font-family: $title-font;
+            border: 1px solid #e5e5e5;
+            border-radius: 5px;
+            width: 100%;
         }
     }
 }
@@ -60,8 +67,21 @@ span {
     align-items: center;
     justify-content: center;
     margin: auto;
-    width: 60%;
+    width: 80%;
     .fieldset {
         width: 100%;
+        .flag-dropdown {
+            .country-name {
+                color: $main-color;
+                // &:hover {
+                //     color: $main-color;
+                // } 
+            }
+        }
+        .uk-input, .uk-select, .uk-textarea, .form-control {
+            width: 100%;
+            border: 1px solid #e5e5e5;
+            border-radius: 5px;
+        }
     }
 }

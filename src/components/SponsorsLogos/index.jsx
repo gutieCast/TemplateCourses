@@ -6,8 +6,7 @@ const SponsorsLogos = () => {
     return (
         <div className="grid-container">
             <ul className="grid-collaborators"
-                // uk-scrollspy="cls:uk-animation-slide-bottom-small; target: .logo-collab; repeat: true"
-                uk-parallax="target: .logo-collab; opacity: 0, 1; y: 55,0; viewport: 0.5; easing: 1; repeat: true"
+                uk-parallax="target: .logo-collab; opacity: 0, 1; y: 75,0; viewport: 0.5; easing: 1; repeat: true"
             >
                 {
                     logos.map(({ title, src, id }) => {

@@ -4,6 +4,8 @@
 .main {
     position: relative;
     height: auto;
-    margin-top: 85px;
     width: 100%;
+    &:first-child {
+        margin-top: 85px;
+    }
 }

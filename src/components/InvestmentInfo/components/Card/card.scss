@@ -7,18 +7,21 @@
     flex-direction: column;
     display: flex;
     margin: 7px;
-    padding: 0;
     height: max-content;
     @include breakpoint-3 {
         max-width: 290px;
         padding-top: 50px;
         position: relative;
     }
+    &:first-child {
+        padding: 0;
+    }
     // width: max-content;
     .recomended-container {
         width: 185px;
         display: block;
         overflow-x: auto;
+        padding-top: 15px;
         @include breakpoint-3 {
             position: absolute;
             top: -20px;

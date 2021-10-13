@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Redirect } from 'react-router'
-import PhoneInput from 'react-phone-number-input'
+import PhoneInput from 'react-phone-input-2'
+import es from 'react-phone-input-2/lang/es.json'
 import { Button } from '../Button'
 import { validations } from '../../helpers/validations'
-import 'react-phone-number-input/style.css'
+import 'react-phone-input-2/lib/style.css'
 import './form.scss'
 
 const Form = ({ signIn }) => {
@@ -156,7 +157,7 @@ const Form = ({ signIn }) => {
                             </div>
 
                             <div className="uk-margin">
-                                <PhoneInput withCountryCallingCode={false} defaultCountry="BO" international={true} className="uk-input input-phone" placeholder="Número celular" name="phone" id="phone" type="text" value={phone} onChange={setPhone} onBlur={() => validatePhone(phone)} />
+                                <PhoneInput country='bo' localization={es} className="uk-input input-phone" placeholder="Número celular" inputStyle={{ backgroundColor: 'transparent', color: '#FFFFFF', width: '100%' }} name="phone" id="phone" type="text" value={phone} onChange={setPhone} onBlur={() => validatePhone(phone)} />
                                 {errors.phone !== '' ? <span>{errors.phone}</span> : ''}
                             </div>
 
@@ -202,7 +203,7 @@ const Form = ({ signIn }) => {
                             </div>
 
                             <div className="uk-margin">
-                                <PhoneInput withCountryCallingCode={false} defaultCountry="BO" international={true} className="uk-input input-phone" placeholder="Número celular" name="phone" id="phone" type="text" value={phone} onChange={setPhone} onBlur={() => validatePhone(phone)} />
+                                <PhoneInput country='bo' localization={es} className="uk-input input-phone" placeholder="Número celular" name="phone" id="phone" type="text" value={phone} onChange={setPhone} onBlur={() => validatePhone(phone)} />
                                 {errors.phone !== '' ? <span>{errors.phone}</span> : ''}
                             </div>
 
@@ -226,8 +227,10 @@ const Form = ({ signIn }) => {
                 </fieldset>
                 {
                     signIn
-                        ? <Button btn={true} classStyle={'btn-dark'} text={'enviar'} disabled={isDisabled ? 'disabled' : ''} onClick={(e) => handleSubmitSignIn(e)} />
-                        : <Button btn={true} classStyle={'btn-normal'} text={'enviar'} disabled={isDisabled ? 'disabled' : ''} onClick={(e) => handleSubmitContact(e)} />
+                        ?
+                        <Button btn={true} classStyle={'btn-dark'} text={'enviar'} disabled={isDisabled ? 'disabled' : ''} onClick={(e) => handleSubmitSignIn(e)} />
+                        :
+                        <Button btn={true} classStyle={'btn-normal'} text={'enviar'} disabled={isDisabled ? 'disabled' : ''} onClick={(e) => handleSubmitContact(e)} />
                 }
             </form >
         </>

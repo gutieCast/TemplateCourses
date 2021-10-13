@@ -1,5 +1,4 @@
-import React, { useRef, useState, useEffect, useMemo } from 'react'
-import { useScrollPosition } from '../../hooks/useScrollPosition'
+import React from 'react'
 import Header from '../../components/Header'
 import { ButtonFixed } from './components/ButtonFixed'
 import { Hero } from '../../components/Hero'

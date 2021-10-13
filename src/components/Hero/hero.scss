@@ -4,11 +4,11 @@
 #hero {
     margin-top: 85px;
     align-items: center;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     position: relative;
     width: 100%;
+    height: auto;
     .img-hero {
         align-items: center;
         background-position: center;
@@ -17,9 +17,17 @@
         box-sizing: content-box;
         display: flex;
         flex-direction: column;
-        height: 100%;
         justify-content: space-between;
         width: 100%;
+        height: inherit;
+        @include breakpoint-1 {
+            min-height: 555px;
+            max-height: 100vh;
+        }
+        @include breakpoint-2 {
+            min-height: 767px;
+
+        }
         @include breakpoint-4 {
             // background-attachment: fixed;
             background-size: cover;
@@ -50,8 +58,6 @@
         }
         .link-button {
             text-decoration: none;
-            position: relative;
-            bottom: -20%;
         }
         
     }

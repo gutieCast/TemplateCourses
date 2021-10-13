@@ -14,7 +14,7 @@ const Contact = () => {
             >
                 <div className="headline">
                     <p className="headline-text">
-                        ¿Deseas más información
+                        ¿Deseas más información?
                         <br />
                         Déjanos tu contacto y nos comunicaremos contigo.
                     </p>

@@ -21,7 +21,7 @@ const InvestmentInfo = () => {
                     {
                         inversion.map(({ recomended, title, price, label, extraItem, description, optionSelected }) => {
                             return (
-                                <li>
+                                <li key={title} className="card-item">
                                     <Card
                                         recomended={recomended}
                                         title={title}

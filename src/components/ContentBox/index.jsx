@@ -6,7 +6,8 @@ const ContentBox = ({ theme, title, hideDiv, imgRoute, body, flowContent, childr
         <>
             {
                 hideDiv &&
-                <div className={`content-box no-margin ${theme} ${flowContent}`}>
+                // content-box no-margin
+                <div className={`content-box ${theme} ${flowContent}`}>
                     <h2 className="title-section-center">
                         {title}
                         <div className="title-line"></div>
@@ -16,7 +17,8 @@ const ContentBox = ({ theme, title, hideDiv, imgRoute, body, flowContent, childr
             }
             {
                 !hideDiv &&
-                <div className={`content-box ${theme} ${flowContent}`}>
+                // content-box
+                <div className={`content-box  ${theme} ${flowContent}`}>
                     <div className="img-container">
                         <img className="img-section" src={imgRoute} alt="banner" />
                     </div>

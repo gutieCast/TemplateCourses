@@ -3,7 +3,7 @@ const errors = {};
 const validateName = (name) => {
     if (!name || name === '' || name === "undefined") {
         return errors.name = "Por favor, ingrese su nombre"
-    } else if (!name.match(/^[a-zA-Z]+$/)) {
+    } else if (!name.match(/^[a-zA-Z\s]+$/)) {
         return errors.name = "Use sólo letras";
         // } else if (name.length > 30) {
         //     return errors.name = "El nombre debe tener menos de 30 caracteres"
@@ -15,7 +15,7 @@ const validateName = (name) => {
 const validateLastname = (lastname) => {
     if (!lastname || lastname === '' || lastname === "undefined") {
         return errors.lastname = "Por favor, ingresar su apellido"
-    } else if (!lastname.match(/^[a-zA-Z]+$/)) {
+    } else if (!lastname.match(/^[a-zA-Z\s]+$/)) {
         return errors.lastname = "Use sólo letras"
         // } else if (lastname.length > 30) {
         //     return errors.lastName = "El apellido debe tener menos de 30 caracteres"
@@ -36,7 +36,7 @@ const validateEmail = (email) => {
 };
 
 const validatePhone = (phone) => {
-    const regExPhone = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+    const regExPhone = /^[\]?[(]?[0-9]{3}[)]?[-\s\]?[0-9]{3}[-\s\]?[0-9]{4,6}$/im;
     if (!phone || phone === '' || phone === "undefined") {
         return errors.phone = "Por favor, ingrese su número telefónico"
     } else if (!regExPhone.test(phone)) {
@@ -49,7 +49,7 @@ const validatePhone = (phone) => {
 const validateProfession = (profession) => {
     if (!profession || profession === '' || profession === "undefined") {
         return errors.profession = "Por favor, ingrese su profesión"
-    } else if (!profession.match(/^[a-zA-Z]+$/)) {
+    } else if (!profession.match(/^[a-zA-Z\s]+$/)) {
         return errors.profession = "Use sólo letras"
     } else {
         return errors.profession = ''
@@ -59,7 +59,7 @@ const validateProfession = (profession) => {
 const validateOrganization = (organization) => {
     if (!organization || organization === '' || organization === "undefined") {
         return errors.organization = "Por favor, ingrese el nombre de la institución o empresa donde trabaja actualmente"
-    } else if (!organization.match(/^[a-zA-Z]+$/)) {
+    } else if (!organization.match(/^[a-zA-Z\s]+$/)) {
         return errors.organization = "Use sólo letras"
     } else {
         return errors.organization = ''

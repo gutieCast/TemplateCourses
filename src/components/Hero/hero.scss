@@ -6,7 +6,6 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-    position: relative;
     width: 100%;
     height: auto;
     .img-hero {
@@ -14,24 +13,25 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        box-sizing: content-box;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        position: relative;
         width: 100%;
-        height: inherit;
+        height: 100%;
         @include breakpoint-1 {
-            min-height: 555px;
-            max-height: 100vh;
+            min-height: 715px;
         }
         @include breakpoint-2 {
-            min-height: 767px;
-
+            min-height: 926px;
+        }
+        @include breakpoint-3 {
+            max-height: 1366px;
         }
         @include breakpoint-4 {
             // background-attachment: fixed;
             background-size: cover;
-            height: 1066px;
+            height: 100vh;
         }
         .name-container {
             padding-top: 13px;
@@ -56,8 +56,17 @@
                 }
             }
         }
+        .container-hero {
+            display: flex;
+            justify-content: space-evenly;
+        }
         .link-button {
             text-decoration: none;
+            position: absolute;
+            bottom: 40%;
+            @include breakpoint-3 {
+                bottom: 30%;
+            }
         }
         
     }

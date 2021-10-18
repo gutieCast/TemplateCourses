@@ -21,7 +21,6 @@ const Menu = ({ styleAnimation, styleName }) => {
                     >
                         <NavLink
                             className="menu-link"
-                            to={`/${hash}`}
                             scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })}
                             to={link}
                         >

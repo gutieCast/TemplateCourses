@@ -14,12 +14,20 @@ const Hero = () => {
                     <h1 className="uk-text-center uk-margin-auto uk-margin-auto-vertical"
                         uk-parallax="target: #hero; opacity: 1, 0; y: 400; easing: -2"
                         id="text-hero">
-                        {nameCourse}
+                        {
+                            nameCourse.map(fragName => {
+                                return (
+                                    <p style={{ margin: '0' }} key={fragName}>{fragName}</p>
+                                )
+                            })
+                        }
                     </h1>
                 </div>
-                <Button classStyle={'logo-box hero'} link={`${process.env.PUBLIC_URL}/inscribirse`}
-                    text={'¡Inscríbete!'} />
-                <SponsorsLogos />
+                <div className="container-hero">
+                    <Button classStyle={'logo-box hero'} link={`${process.env.PUBLIC_URL}/inscribirse`}
+                        text={'¡Inscríbete!'} />
+                    <SponsorsLogos />
+                </div>
             </div>
         </div>
     )

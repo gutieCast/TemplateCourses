@@ -29,7 +29,6 @@ const SlideNav = ({ modules, teachers }) => {
         <div uk-slider="autoplay: true; autoplay-interval: 2500; pause-on-hover: true; center: true"
             className="uk-position-relative uk-visible-toggle uk-light slider" tabIndex="-1" >
             <div className="uk-position-relative position-slider">
-                {/* Div problema */}
                 <div className="uk-slider-container uk-grid slider-container">
                     <ul className="uk-slider-items uk-child-width-expand-1-2@s uk-child-width-1-3@m uk-child-width-1-4@l cards-container">
                         {
@@ -71,14 +70,14 @@ const SlideNav = ({ modules, teachers }) => {
                         }
                     </ul>
                 </div>
-                <a class="uk-position-center-left button-slider left" href="#" uk-slider-item="previous">
+                <div className="uk-position-center-left button-slider left" href="#" uk-slider-item="previous">
                     <span uk-icon="icon: chevron-left; ratio: 2"></span>
-                </a>
-                <a class="uk-position-center-right button-slider right" href="#" uk-slider-item="next">
+                </div>
+                <div className="uk-position-center-right button-slider right" href="#" uk-slider-item="next">
                     <span uk-icon="icon: chevron-right; ratio: 2"></span>
-                </a>
+                </div>
             </div>
-            <ul class="uk-slider-nav uk-dotnav"></ul>
+            <ul className="uk-slider-nav uk-dotnav"></ul>
         </div >
     )
 }

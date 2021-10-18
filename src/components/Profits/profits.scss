@@ -28,9 +28,13 @@
             }
             @include breakpoint-3 {
                 grid-template-columns: repeat(3, 1fr);
+                grid-gap: 40px;
             }
             @include breakpoint-4 {
                 grid-gap: 50px;
+            }
+            @include breakpoint-6 {
+                grid-gap: 70px;
             }
             .profit {
                 display: block;

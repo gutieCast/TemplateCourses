@@ -10,6 +10,9 @@
         border-color: transparent;
         max-width: 1300px;
         padding: 0;
+        @include breakpoint-3 {
+            margin-top: 55px;
+        }
         .card-item {
             padding-top: 15px;
         }
@@ -36,6 +39,9 @@
         justify-content: center;
         flex-direction: column;
         height: 500px;
+        @include breakpoint-6 {
+            background-repeat: repeat;
+        }
         .banner-text {
             color: $white;
             font-family: $title-font;

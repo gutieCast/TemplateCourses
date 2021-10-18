@@ -75,7 +75,7 @@ const Form = ({ signIn }) => {
         if (name !== '' && lastname !== '' && email !== '' && phone !== '' && organization !== '' && profession !== '' && (paymentModality !== null && paymentModality !== '-- Escoje tu paquete --')) {
             setIsDisabled(AreErrors(errors))
         }
-    }, [name, lastname, email, phone, profession, organization, paymentModality]);
+    }, [name, lastname, email, phone, profession, organization, paymentModality, errors]);
 
     const AreErrors = (errors) => {
         let count = 0;
@@ -131,7 +131,7 @@ const Form = ({ signIn }) => {
         if (name !== '' && email !== '' && phone !== '' && organization !== '' && subject !== '' && message !== '') {
             setIsDisabled(AreErrors(errors))
         }
-    }, [name, email, phone, organization, subject, message]);
+    }, [name, email, phone, organization, subject, message, errors]);
 
     return (
         <>

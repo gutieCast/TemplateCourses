@@ -10,6 +10,18 @@
     padding: 30px;
     width: 100%;
     height: 100%;
+    @include breakpoint-3 {
+        padding: 30px 50px;
+    }
+    @include breakpoint-5 {
+        padding: 30px 90px;
+    }
+    @include breakpoint-6 {
+        padding: 30px 150px;
+    }
+    @include breakpoint-7 {
+        padding: 30px 350px;
+    }
     .title-section-center {
         display: block;
         text-transform: uppercase;
@@ -44,6 +56,9 @@
             // padding: 30px 70px;
             width: 50%;
             margin: 0;
+        }
+        @include breakpoint-6 {
+            padding: 30px 70px;
         }
         .img-section {
             // padding: 30px;

@@ -3,16 +3,17 @@
 
 .slider {
     width: 90vw;
-    padding:0;
+    padding: 0 0 50px 0;
     height: min-content;
     .position-slider {
         display: block;
         .slider-container {
             margin: 0 30px;
+            height: auto;
             .cards-container {
                 grid-gap: 30px;
                 width: 100%;
-                // height: auto;
+                height: auto;
             }
         }
         .button-slider, 

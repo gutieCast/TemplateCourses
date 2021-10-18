@@ -6,13 +6,13 @@ const SponsorsLogos = () => {
     return (
         <div className="grid-container">
             <ul className="grid-collaborators"
-                uk-parallax="target: .logo-collab; opacity: 0, 1; y: 75,0; viewport: 0.5; easing: 1; repeat: true"
+                uk-parallax="opacity: 0, 1; y: 100, 0; repeat: true; viewport: 0.7"
             >
                 {
                     logos.map(({ title, src, id }) => {
                         return (
                             <li className="logo-collab-item"
-                                key={src}
+                                key={title}
                             >
                                 <img id={id} className="logo-collab" src={src} title="title" alt={title} />
                             </li>

@@ -21,7 +21,7 @@ const Profits = () => {
                         {
                             beneficios.map(({ title, body }) => {
                                 return (
-                                    <li className="profit">
+                                    <li className="profit" key={title}>
                                         <img className="icon-profit" src={iconProfit} alt="medal icon" />
                                         <h3 className="title-profit">{title}</h3>
                                         <p className="text-profit">{body}</p>
